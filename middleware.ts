@@ -15,6 +15,7 @@ export async function middleware(req: NextRequest) {
     const pathname = req.nextUrl.pathname;
     const nextUrl = req.nextUrl.clone();
 
+    
     // 语言区域重定向和处理
     const handleI18n = intlMiddleware(req);
     const hasLocalePrefix = locales.some(
@@ -29,8 +30,8 @@ export async function middleware(req: NextRequest) {
     }
 
 
-    // const pageResponse = await optimizePageRuntime(req);
-    // if (pageResponse) return pageResponse;
+    const pageResponse = await optimizePageRuntime(req);
+    if (pageResponse) return pageResponse;
 
     const staticResponse = handleStaticJs(pathname);
     if (staticResponse) return staticResponse;
