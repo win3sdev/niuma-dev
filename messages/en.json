@@ -1,0 +1,254 @@
+{
+  "home": {
+    "intro": {
+      "part1": "This project is operated by ",
+      "part2": ", inspired by 996.ICU, dedicated to voicing out for exploited Chinese students.",
+      "part3": "$Li Community Team"
+    },
+    "core": {
+      "title": "Core Principles",
+      "part1": "We hope to build a ",
+      "part2": "unique community",
+      "part3": " that, in an authoritarian environment like China,",
+      "part4": " defends human rights, press freedom, and freedom of speech",
+      "part5": ". As the $LI community grows, we aim to build consensus and jointly promote these core values."
+    },
+    "system": {
+      "title": "What is the 611 Study System?",
+      "quote": "\"611Study\" refers to \"School starts at 6 AM, ends at 11 PM, sick in ICU.\" This has become a common phenomenon in Chinese middle schools.",
+      "text": "Students spend over ",
+      "highlight": "102 hours per week",
+      "consequence": " at school, severely damaging their mental and physical health. This model is ",
+      "warning": "worse than prison",
+      "ending": "."
+    },
+    "actions": {
+      "title": "What can we do?",
+      "list": [
+        "Fill out the ",
+        "Overtime Study School Registration Survey",
+        ", update the nationwide ",
+        "Shame List",
+        "Report listed schools to out-of-area education bureaus and mayor hotlines collaboratively",
+        "Participate in the community to propose new topics and solutions",
+        "Get off school by 6 PM 🕕 — this is the right we deserve"
+      ]
+    },
+    "vision": {
+      "title": "Principles and Vision",
+      "content": "611Study.ICU is a grassroots shout from students. We encourage people from different regions and fields to join the discussion. Our community advocates for ",
+      "highlight": "mature, responsible, and constructive speech",
+      "ending": " to jointly explore solutions."
+    },
+    "inspiration": {
+      "title": "Our Inspiration",
+      "thanks": "Special thanks to ",
+      "reference": "996.ICU",
+      "followup": " for the inspiration and open-source project framework. We carry forward its spirit into student rights protection, striving for a proper growth environment for Chinese children.",
+      "note": "Please freely exert your power,",
+      "warning": "but avoid blindly expanding translation versions."
+    },
+    "cta": {
+      "title": "Join us to drive change together",
+      "desc": "By filling out surveys and participating in the community, we collectively fight for students' rightful rights.",
+      "submit": "Fill out the questionnaire",
+      "contact": "Join us"
+    },
+    "footer": {
+      "text": "All rights reserved"
+    }
+  },
+  "metaTitle": "牛马ICU.",
+  "metaDescription": "611Study refers to the schedule of starting school at 6 a.m. and finishing at 11 p.m., with the phrase \"fall sick, end up in the ICU.\" This has become a widespread and often mandatory routine in many middle and high schools across China. Countless students suffer both physically and mentally under this system. Through this project, we aim to help Chinese students break free from this prison-like schedule and reclaim a healthy, happy childhood.",
+
+  "navigation": {
+    "submit": "Submit Data",
+    "display": "Display Data",
+    "charts": "Chart display",
+    "map": "Geographical distribution",
+    "contact": "Contact Us"
+  },
+  "theme": {
+    "light": "Light",
+    "dark": "Dark"
+  },
+  "language": {
+    "en": "English",
+    "zh-CN": "简体中文",
+    "zh-TW": "繁體中文"
+  },
+  "site": {
+    "title": "牛马ICU",
+    "description": "A modern Next.js application with i18n and theme support"
+  },
+  "form": {
+    "title": "Overtime School Registration Questionnaire",
+    "description": "Please fill in the relevant information of the school completely to ensure that the registration information is accurate.",
+    "card": "We attach great importance to your privacy and data security. All information you submit will be kept strictly confidential and will only be used for academic research and data analysis. It will never be disclosed to any third party. Thank you for your trust and support.",
+    "safaKeyword": {
+      "label": "Safeword",
+      "description": "To prevent counterfeiting",
+      "placeholder": "Please enter a safe word"
+    },
+    "province": {
+      "label": "Province",
+      "placeholder": "Select province",
+      "description": "Province where your school is located"
+    },
+    "city": {
+      "label": "City",
+      "placeholder": "Enter city name",
+      "description": "City address"
+    },
+    "district": {
+      "label": "District",
+      "placeholder": "Enter district name",
+      "description": "District address"
+    },
+    "schoolName": {
+      "label": "School Name",
+      "placeholder": "Enter school name",
+      "description": "Name of your school"
+    },
+    "grade": {
+      "label": "Grade",
+      "placeholder": "Enter your grade",
+      "description": "Your current grade",
+      "options": {
+        "grade1": "Grade 1",
+        "grade2": "Grade 2",
+        "grade3": "Grade 3",
+        "grade4": "Grade 4",
+        "grade5": "Grade 5",
+        "grade6": "Grade 6",
+        "grade7": "Junior 1",
+        "grade8": "Junior 2",
+        "grade9": "Junior 3",
+        "grade10": "Senior 1",
+        "grade11": "Senior 2",
+        "grade12": "Senior 3"
+      }
+    },
+    "schoolStartTime": {
+      "label": "School Start Time",
+      "description": "For your regular school start time, click the clock button on the right for quick entry (AM = morning, PM = afternoon)."
+    },
+    "schoolEndTime": {
+      "label": "School End Time",
+      "description": "Daily school time (including evening self-study), click the clock button on the right to quickly fill in (AM-morning/PM-afternoon)"
+    },
+    "weeklyStudyHours": {
+      "label": "Weekly Study Hours",
+      "placeholder": "Enter weekly study hours",
+      "description": "Note: Weekly hours, not daily!"
+    },
+    "monthlyHolidays": {
+      "label": "Monthly Holiday Days",
+      "placeholder": "Enter monthly holiday days",
+      "description": "Number of holiday days per month"
+    },
+    "suicideCases": {
+      "label": "Student Suicide Cases in 2024",
+      "placeholder": "Enter number",
+      "description": "Cases of students under extreme pressure"
+    },
+    "studentComments": {
+      "label": "Student Comments",
+      "placeholder": "Enter your comments",
+      "description": "Share your thoughts about mental health pressure at your school"
+    },
+    "submit": "Submit Survey",
+    "submitting": "Submitting...",
+    "success": "Survey submitted successfully!",
+    "error": "Error submitting survey. Please try again."
+  },
+  "display": {
+    "title": "Overtime School Registration Questionnaire",
+    "card": "All content is contributed by users and published after manual review. If you find any errors in the information, please contact us to correct or delete it.",
+    "viewDetails": "View Details",
+    "noData": "No Data Available",
+    "province": "Province",
+    "city": "City",
+    "district": "District",
+    "schoolName": "School Name",
+    "grade": "Grade",
+    "studentComments": "Student Comments",
+    "weeklyStudyHours": "Weekly Study Hours in School",
+    "monthlyHolidays": "Monthly Holiday Days",
+    "suicideCases": "2024 Student Suicide Cases",
+    "createdAt": "Submission Time",
+    "schoolStartTime": "School Start Time",
+    "schoolEndTime": "School End Time",
+    "location": "Geographical Location",
+    "schoolSchedule": "School Schedule",
+    "statistics": "Statistics",
+    "winterVacationDays": "Winter Vacation Days",
+    "winterTuitionTotal": "Winter Tuition Total Fee",
+    "pagination": {
+      "prev": "Previous Page",
+      "next": "Next Page",
+      "page": "Page {page}",
+      "of": "of {total} pages",
+      "showing": "Showing {start}-{end} items, total {total} items"
+    },
+    "filter": {
+      "placeholder": "Enter Filter Conditions",
+      "min": "Minimum Value",
+      "max": "Maximum Value",
+      "apply": "Apply Filter",
+      "clear": "Clear Filters"
+    }
+  },
+  "charts": {
+    "title": "Data Statistics Charts",
+    "gradeDistribution": "Grade Distribution",
+    "weeklyStudyHoursDistribution": "Monthly Holidays Distribution",
+    "schoolStartTime": "School Start Time Distribution",
+    "schoolEndTime": "Distribution of school dismissal time (including evening self-study)",
+    "provinceDataDistribution": "Data distribution by province"
+  },
+  "map": {
+    "title": "Page Under Construction",
+    "description": "We’re working hard to build this page. Stay tuned!",
+    "backHome": "Back to Home"
+  },
+  "contact": {
+  "title": "Join the $Li Community",
+  "join": {
+    "title": "Join the $Li Community",
+    "content": "We sincerely invite you to become a part of the <strong>$Li Community</strong>, a group dedicated to promoting democracy, freedom of speech, and press freedom in China. Join our <a>Telegram group</a> to connect with like-minded individuals, share ideas, and drive positive change together."
+  },
+  "committee": {
+    "title": "Join the Preparatory Committee",
+    "intro": "Do you have innovative ideas or professional skills? We are forming a preparatory committee to guide the <strong>$Li Community</strong> toward becoming a <strong>DDAO (Democratic Decentralized Autonomous Organization)</strong>.",
+    "roles": {
+      "visionary": "<strong>Visionaries with unique insights:</strong> Have ideas for DAOs or projects aligned with our values.",
+      "tech": "<strong>Technical Experts:</strong> Experience in front-end/back-end development; blockchain expertise, especially in Rust and the Solana ecosystem.",
+      "design": "<strong>Creative Designers:</strong> Skilled in UI/UX, graphic design, or other creative fields.",
+      "rights": "<strong>Advocates for Democracy and Human Rights:</strong> Experienced in promoting democracy, human rights, and free speech."
+    }
+  },
+  "why": {
+    "title": "Why Join?",
+    "mission": "Work alongside passionate and like-minded individuals.",
+    "freedom": "Be part of a great mission advancing freedom, human rights, and democratic experimentation.",
+    "future": "Play a key role in shaping the future vision of the $Li Community."
+  },
+  "how": {
+    "title": "How to Apply",
+    "intro": "You can reach out to us through the following ways:",
+    "telegram": "Click to join our Telegram group"
+  },
+  "foundation": {
+    "title": "Snowflake Foundation",
+    "name": "Li Laoshi is not your teacher"
+  },
+  "jiang": {
+    "title": "611 Study ICU Project Lead - Jiang Bu",
+    "bio": "Jiang Bu — dissident, artist, situationist. Lives in Paris. Has made documentaries, curated film selections, driven taxis, and been taken to the police station."
+  },
+  "tech": {
+    "title": "Tech Support - xROx"
+  }
+}
+}

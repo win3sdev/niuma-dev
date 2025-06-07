@@ -1,0 +1,45 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model SurveyEntry {
+  id          String   @id @default(cuid())
+  submittedAt DateTime @default(now())
+  gender      String? //性别
+  ageRange    String? //年龄范围
+  occupation  String? // 职业
+
+  companyName String  //公司名称
+  companySize String  //公司规模
+  companyType String  //公司性质
+  province    String  //省份
+  city        String  //城市
+  district    String  //区县
+
+  dailyWorkHours             String? //平均每日工作时长
+  weeklyWorkDays             String? //平均每周工作天数
+  overtimePay                String? // 加班报酬
+  negativeConsequence        String? // 因拒绝加班或质疑工作安排而面临负面后果
+  longWorkIssues             String? // 因长时间工作产生的问题 []
+  longWorkIssuesOtherText    String? // 长时间工作产生的影响 其他
+  discriminationReasons      String? // 职场中受到的歧视
+  discriminationReasonsOther String? 
+
+  violationsObserved      String? // 违法违规现象
+  violationsObservedOther String?
+  expectedChanges         String? // 希望得到的改变
+  expectedChangesOther    String?
+  story                   String? //评论
+  safetyWord              String?
+  reviewStatus            String   @default("pending") 
+  updatedAt               DateTime @updatedAt
+  reviewer                String?
+  reviewComment           String?  
+  ip                      String
+  userAgent               String
+}
