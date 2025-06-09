@@ -7,6 +7,7 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import CustomDialog from "@/components/ui/CustomDialog";
 import { Skeleton } from "@/components/ui/skeleton";
+import { useTranslations } from "next-intl";
 import {
   Dialog,
   DialogTrigger,
@@ -15,7 +16,19 @@ import {
   DialogClose,
 } from "@/components/ui/dialog";
 import { Info } from "lucide-react";
-import { Download, Settings, Eye } from "lucide-react";
+import {
+  Download,
+  Settings,
+  Eye,
+  ChevronUp,
+  ChevronDown,
+  Building2,
+  MapPin,
+  Briefcase,
+  Calendar,
+  Layers,
+  Users,
+} from "lucide-react";
 import axios from "axios";
 import { motion } from "framer-motion";
 
@@ -188,6 +201,11 @@ const fieldOptions: Record<string, string[]> = {
     "无编制公职人员（如辅警，企事业单位合同工，劳务派遣岗位，私立学校教师）",
     "有编制公职人员（包括政府/公务员/事业单位，教师，有编制公务员）",
     "金融/银行/法律",
+    "医药健康（医生、护士、药师、健康顾问等）",
+    "教育/培训（如辅导班老师，学校教师请填公职人员）",
+    "服务业（中介/销售/保险/服务员/旅游业等）",
+    "自由职业（作家、摄影师、设计师）",
+    "无法找到长期固定工作",
   ],
   companySize: [
     "小型（1 - 50人）",
@@ -204,16 +222,52 @@ const fieldOptions: Record<string, string[]> = {
     "中外合资",
   ],
   province: ["北京", "上海", "广东"],
-  city: ["北京", "上海", "广州"],
-  district: ["朝阳区", "黄浦区", "天河区"],
-  longWorkIssues: ["加班严重", "任务繁重", "节奏快"],
-  discriminationReasons: ["性别", "年龄", "学历"],
-  violationsObserved: ["克扣工资", "不签合同"],
-  expectedChanges: ["提高福利", "减轻压力"],
-  story: ["有趣经历", "辛酸往事"],
+  // city: ["北京", "上海", "广州"],
+  // district: ["朝阳区", "黄浦区", "天河区"],
+  longWorkIssues: [
+    "身体健康（如腰痛、视力下降）",
+    "心理压力（如抑郁、焦虑、失眠）",
+    "人际或家庭关系紧张",
+  ],
+  discriminationReasons: [
+    "性别",
+    "年龄",
+    "生育/婚姻状态",
+    "身份（如地域、学历、民族、性向等）",
+  ],
+  violationsObserved: [
+    "胡乱扣除绩效",
+    "不缴纳五险一金或社保",
+    "拖欠工资",
+    "不签订劳动合同",
+    "低于法定最低工资",
+    "开除不给补偿",
+  ],
+  expectedChanges: [
+    "缩短工时（反996）",
+    "支付加班费",
+    "增加休息日",
+    "追究企业责任",
+  ],
+  story: ["故事分享"],
+  overtimePay: [
+    "不加班",
+    "全额支付（1.5倍正常工资）",
+    "部分支付（存在不足法定1.5倍工资）",
+    "无偿加班",
+    "按件/按时计费",
+  ],
+  weeklyWorkDays: ["五天或小于五天", "六天", "七天"],
+  dailyWorkHours: [
+    "小于等于 8 小时",
+    "8 - 12 小时",
+    "大于等于 12 小时",
+    "弹性/不定时",
+  ],
 };
 
 export default function SurveyTablePage() {
+  const t = useTranslations("display");
   const [openDialogIndex, setOpenDialogIndex] = useState<number | null>(null);
   const [data, setData] = useState<any[]>([]);
 
@@ -315,27 +369,33 @@ export default function SurveyTablePage() {
       setHeaderHeight(headerRef.current.clientHeight);
     }
   }, []);
+
+  // 移动端搜索
+
+  const [showAdvancedSearch, setShowAdvancedSearch] = useState(false);
+
   return (
     <div className="w-full ">
       {paginatedData.length > 0 ? (
         <div className="mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-6 overflow-x-auto">
           <div className="flex items-center justify-between">
-            <h1 className="text-2xl font-bold">数据展示表</h1>
+            <h1 className="text-2xl font-bold">{t("table.title")}</h1>
+
             <Dialog>
               <DialogTrigger asChild>
                 <Button variant="outline">
                   <Settings className="w-4 h-4 mr-2" />
-                  表格设置
+                  {t("table.settings.button")}
                 </Button>
               </DialogTrigger>
 
               <DialogContent className="max-w-lg bg-white dark:bg-zinc-900 shadow-lg rounded-lg">
                 <DialogTitle className="text-lg font-semibold">
-                  表格字段设置
+                  {t("table.settings.title")}
                 </DialogTitle>
 
                 <div className="text-sm text-muted-foreground mb-4">
-                  请选择你希望在表格中显示的字段。
+                  {t("table.settings.description")}
                 </div>
 
                 <div className="max-h-64 overflow-y-auto border rounded-md p-4 bg-muted/20 flex flex-col gap-3">
@@ -349,8 +409,9 @@ export default function SurveyTablePage() {
                         onCheckedChange={() => toggleField(field.key)}
                         id={`field-${field.key}`}
                       />
-                      {/* <span htmlFor={`field-${field.key}`}>{field.label}</span> */}
-                      <label htmlFor={`field-${field.key}`}>{field.label}</label>
+                      <label htmlFor={`field-${field.key}`}>
+                        {field.label}
+                      </label>
                     </label>
                   ))}
                 </div>
@@ -358,62 +419,200 @@ export default function SurveyTablePage() {
                 <div className="mt-6 flex justify-end gap-2">
                   <Button variant="secondary" onClick={downloadCSV}>
                     <Download className="w-4 h-4 mr-2" />
-                    下载数据
+                    {t("table.settings.download")}
                   </Button>
                 </div>
               </DialogContent>
             </Dialog>
           </div>
 
+          {/* 移动端 */}
           {isMobile ? (
-            <div className="wfull grid gap-4">
-              {paginatedData.map((row, i) => (
-                <div
-                  key={i}
-                  className="border rounded-lg p-4 bg-card shadow-sm space-y-2"
-                >
-                  <div className="font-semibold">
-                    {row.companyName}（{row.province}）
+            <>
+              {/* 搜索栏区域 */}
+              <div className="space-y-2 mb-4">
+                {/* 公司名称搜索框 */}
+                <div className="mb-4">
+                  <div className="flex items-center gap-2 w-full">
+                    <Input
+                      type="text"
+                      placeholder={t("search.placeholder")}
+                      value={tempFilters.companyName || ""}
+                      onChange={(e) =>
+                        setTempFilters((prev) => ({
+                          ...prev,
+                          companyName: e.target.value,
+                        }))
+                      }
+                      className="flex-1 px-4 py-2 rounded-xl border border-neutral-300 dark:border-neutral-700 bg-white dark:bg-neutral-900 text-neutral-900 dark:text-white shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    />
+                    <Button
+                      onClick={() => {
+                        setFilters(tempFilters);
+                        setShowAdvancedSearch(false);
+                      }}
+                      className="px-6 py-2 rounded-xl bg-blue-600 text-white hover:bg-blue-700 whitespace-nowrap"
+                    >
+                      {t("search.btn")}
+                    </Button>
                   </div>
-                  <div className="text-sm text-muted-foreground">
-                    {row.occupation}
-                  </div>
-                  <Dialog>
-                    <DialogTrigger asChild>
-                      <Button size="sm" variant="link">
-                        <Eye className="w-4 h-4 mr-1" /> 查看详情
-                      </Button>
-                    </DialogTrigger>
-
-                    <DialogContent className="max-h-[90vh] overflow-y-auto p-4 bg-white dark:bg-zinc-900 shadow-lg rounded-lg">
-                      {/* 关闭按钮，固定在右上角 */}
-                      <DialogClose className="absolute top-4 right-4 text-muted-foreground hover:text-foreground"></DialogClose>
-
-                      {/* 标题 */}
-                      <DialogTitle className="text-lg font-semibold mb-4 pr-8">
-                        详细内容
-                      </DialogTitle>
-
-                      {/* 内容 */}
-                      <div className="space-y-2 pt-2">
-                        {visibleFields.map((key) => (
-                          <div key={key} className="flex">
-                            <strong className="inline-block w-32 shrink-0 text-muted-foreground">
-                              {allFields.find((f) => f.key === key)?.label}:
-                            </strong>
-                            <span className="break-words">
-                              {Array.isArray(row[key])
-                                ? row[key].join(", ")
-                                : row[key]}
-                            </span>
-                          </div>
-                        ))}
-                      </div>
-                    </DialogContent>
-                  </Dialog>
                 </div>
-              ))}
-            </div>
+
+                {/* 展开详细搜索按钮 */}
+                <div className="w-full flex justify-center mb-4">
+                  <Button
+                    variant="ghost"
+                    className="text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300 flex items-center gap-1"
+                    onClick={() => setShowAdvancedSearch((prev) => !prev)}
+                  >
+                    {showAdvancedSearch ? (
+                      <>
+                        <ChevronUp className="w-4 h-4" />
+                        {t("search.chevronUp")}
+                      </>
+                    ) : (
+                      <>
+                        <ChevronDown className="w-4 h-4" />
+                        {t("search.chevronDown")}
+                      </>
+                    )}
+                  </Button>
+                </div>
+
+                {/* 详细搜索区域 */}
+                {showAdvancedSearch && (
+                  <div className="w-full bg-muted/30 dark:bg-muted/20 rounded-xl p-4 border border-muted space-y-4 mb-4 shadow-sm">
+                    {visibleFields
+                      .filter((key) => key !== "companyName")
+                      .map((key) => {
+                        const field = allFields.find((f) => f.key === key);
+                        return (
+                          <div key={key} className="flex flex-col gap-1">
+                            <label className="text-sm font-medium text-muted-foreground">
+                              {t(`table.fields.${key}`)}
+                            </label>
+                            {field?.filterType === "input" ? (
+                              <Input
+                                type="text"
+                                // placeholder={t("table.searchPlaceholder", {
+                                //   field: t(`table.fields.${key}`),
+                                // })}
+                                value={tempFilters[key] || ""}
+                                onChange={(e) =>
+                                  setTempFilters((prev) => ({
+                                    ...prev,
+                                    [key]: e.target.value,
+                                  }))
+                                }
+                              />
+                            ) : (
+                              <select
+                                value={tempFilters[key] || ""}
+                                onChange={(e) =>
+                                  setTempFilters((prev) => ({
+                                    ...prev,
+                                    [key]: e.target.value,
+                                  }))
+                                }
+                                className="w-full px-3 py-2 rounded-lg border bg-white dark:bg-neutral-900 border-neutral-200 dark:border-neutral-800 text-neutral-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+                              >
+                                <option value="">{t("table.all")}</option>
+                                {(fieldOptions[key] || []).map((option) => (
+                                  <option key={option} value={option}>
+                                    {option}
+                                  </option>
+                                ))}
+                              </select>
+                            )}
+                          </div>
+                        );
+                      })}
+                  </div>
+                )}
+              </div>
+
+              <div className="w-full grid gap-4">
+                {paginatedData.map((row, i) => (
+                  <div
+                    key={i}
+                    className="border rounded-2xl p-4 bg-card shadow-md space-y-3 transition hover:shadow-lg"
+                  >
+                    {/* 顶部信息：公司名 + 省份 */}
+                    <div className="flex items-center gap-2 text-lg font-semibold text-primary">
+                      <Building2 className="w-5 h-5 text-blue-600 shrink-0" />
+                      <span
+                        className="truncate max-w-[180px] sm:max-w-[240px] md:max-w-[320px]"
+                        title={row.companyName}
+                      >
+                        {row.companyName}
+                      </span>
+                      <span className="text-sm text-muted-foreground whitespace-nowrap">
+                        （
+                        {row.province ? (
+                          row.province
+                        ) : (
+                          <em className="italic text-gray-400">未填写</em>
+                        )}
+                        ）
+                      </span>
+                    </div>
+
+                    {/* 公司规模 */}
+                    <div className="flex items-center gap-1 text-sm text-muted-foreground">
+                      <Users className="w-4 h-4" />
+                      <span>{row.companySize || "未填写"}</span>
+                    </div>
+
+                    {/* 公司类型 */}
+                    <div className="flex items-center gap-1 text-sm text-muted-foreground">
+                      <Layers className="w-4 h-4" />
+                      <span>{row.companyType || "未填写"}</span>
+                    </div>
+                    {/* 职业信息 */}
+                    <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                      <Briefcase className="w-4 h-4" />
+                      <span>{row.occupation}</span>
+                    </div>
+
+                    {/* 详情按钮 */}
+                    <Dialog>
+                      <DialogTrigger asChild>
+                        <Button size="sm" variant="outline" className="mt-2">
+                          <Eye className="w-4 h-4 mr-1" />
+                          {t("table.viewDetail")}
+                        </Button>
+                      </DialogTrigger>
+
+                      <DialogContent className="max-h-[90vh] overflow-y-auto p-4 bg-white dark:bg-zinc-900 shadow-lg rounded-xl">
+                        <DialogClose className="absolute top-4 right-4 text-muted-foreground hover:text-foreground" />
+                        <DialogTitle className="text-lg font-semibold mb-4 pr-8 flex items-center gap-2">
+                          <Info className="w-5 h-5 text-blue-500" />
+                          {t("detail.title")}
+                        </DialogTitle>
+
+                        <div className="space-y-3 pt-2">
+                          {visibleFields.map((key) => (
+                            <div
+                              key={key}
+                              className="flex items-start gap-2 text-sm"
+                            >
+                              <strong className="w-32 shrink-0 text-muted-foreground">
+                                {t(`table.fields.${key}`)}:
+                              </strong>
+                              <span className="break-words text-foreground">
+                                {Array.isArray(row[key])
+                                  ? row[key].join(", ")
+                                  : row[key] || "—"}
+                              </span>
+                            </div>
+                          ))}
+                        </div>
+                      </DialogContent>
+                    </Dialog>
+                  </div>
+                ))}
+              </div>
+            </>
           ) : (
             <div className="relative w-full overflow-hidden">
               {/* 可滚动表格区域 */}
@@ -430,20 +629,20 @@ export default function SurveyTablePage() {
                           return (
                             <th
                               key={key}
-                              className="px-4 py-2 text-left font-semibold whitespace-nowrap"
+                              className="px-4 py-2 text-left font-semibold truncate"
                               style={{
                                 maxWidth: field?.maxWidth,
                                 width: field?.maxWidth,
                               }}
                             >
-                              {field?.label}
+                              {t(`table.fields.${key}`)}
                             </th>
                           );
                         })}
                       </tr>
 
                       {/* 筛选输入行 */}
-                      <tr className="border-b bg-background">
+                      <tr className="border-b bg-background truncate">
                         {visibleFields.map((key) => {
                           const field = allFields.find((f) => f.key === key);
                           return (
@@ -465,7 +664,7 @@ export default function SurveyTablePage() {
                                       [key]: e.target.value,
                                     }))
                                   }
-                                  placeholder="请输入关键词"
+                                  placeholder={t("table.filterPlaceholder")}
                                   className="w-full px-4 py-2 rounded-lg border bg-white dark:bg-neutral-900 border-neutral-200 dark:border-neutral-800 text-neutral-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
                                 />
                               ) : (
@@ -479,7 +678,7 @@ export default function SurveyTablePage() {
                                   }
                                   className="w-full px-4 py-2 rounded-lg border bg-white dark:bg-neutral-900 border-neutral-200 dark:border-neutral-800 text-neutral-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
                                 >
-                                  <option value="">全部</option>
+                                  <option value="">{t("table.all")}</option>
                                   {(fieldOptions[key] || []).map((option) => (
                                     <option key={option} value={option}>
                                       {option}
@@ -494,29 +693,42 @@ export default function SurveyTablePage() {
                     </thead>
 
                     <tbody>
-                      {paginatedData.map((row, i) => (
-                        <tr
-                          key={i}
-                          className="h-[50px] border-b hover:bg-muted/50 transition-colors"
-                        >
-                          {visibleFields.map((key) => {
-                            const field = allFields.find((f) => f.key === key);
-                            return (
-                              <td
-                                key={key}
-                                className="px-4 py-2 whitespace-nowrap"
-                                style={{ maxWidth: field?.maxWidth }}
-                              >
-                                <div className="truncate">
-                                  {Array.isArray(row[key])
-                                    ? row[key].join(", ")
-                                    : row[key]}
-                                </div>
-                              </td>
-                            );
-                          })}
+                      {paginatedData.length === 0 ? (
+                        <tr>
+                          <td
+                            colSpan={visibleFields.length}
+                            className="text-center text-sm text-muted-foreground py-6"
+                          >
+                            {t("table.empty")}
+                          </td>
                         </tr>
-                      ))}
+                      ) : (
+                        paginatedData.map((row, i) => (
+                          <tr
+                            key={i}
+                            className="cursor-pointer h-[50px] border-b transition-all duration-200 ease-in-out hover:bg-muted/60 dark:hover:bg-muted/40"
+                          >
+                            {visibleFields.map((key) => {
+                              const field = allFields.find(
+                                (f) => f.key === key
+                              );
+                              return (
+                                <td
+                                  key={key}
+                                  className="px-4 py-2 whitespace-nowrap"
+                                  style={{ maxWidth: field?.maxWidth }}
+                                >
+                                  <div className="truncate">
+                                    {Array.isArray(row[key])
+                                      ? row[key].join(", ")
+                                      : row[key]}
+                                  </div>
+                                </td>
+                              );
+                            })}
+                          </tr>
+                        ))
+                      )}
                     </tbody>
                   </table>
                 </div>
@@ -539,7 +751,7 @@ export default function SurveyTablePage() {
                       className="flex items-center"
                     >
                       <Eye className="w-4 h-4 mr-1" />
-                      查看详情
+                      {t("table.viewDetail")}
                     </Button>
                   </div>
                 ))}
@@ -548,11 +760,13 @@ export default function SurveyTablePage() {
               {/* 筛选栏右侧按钮与“操作”标题 */}
               <div
                 className="absolute right-0 w-[120px] bg-background border-l flex flex-col p-0 bg-white dark:bg-zinc-900"
-                style={{ height: `97px`, top: "-8px"}} // 表头 + 筛选行总高度
+                style={{ height: `97px`, top: "-8px" }} // 表头 + 筛选行总高度
               >
                 {/* 对齐表头 */}
                 <div className="flex items-center justify-center border-b h-[44.5px]">
-                  <span className="font-semibold text-sm mt-2">操作</span>
+                  <span className="font-semibold text-sm mt-2">
+                    {t("table.actions")}
+                  </span>
                 </div>
 
                 {/* 对齐筛选行 */}
@@ -562,7 +776,7 @@ export default function SurveyTablePage() {
                     className="bg-blue-600 hover:bg-blue-700 active:bg-blue-800 text-white dark:bg-blue-500 dark:hover:bg-blue-600 dark:active:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 rounded-md transition-colors duration-200 mt-2"
                     onClick={() => setFilters(tempFilters)}
                   >
-                    确认
+                    {t("table.confirm")}
                   </Button>
                 </div>
               </div>
@@ -575,12 +789,12 @@ export default function SurveyTablePage() {
                 >
                   <DialogContent className="max-h-[90vh] overflow-y-auto p-4 bg-white dark:bg-zinc-900 shadow-lg rounded-lg">
                     <DialogTitle className="text-lg font-semibold mb-4">
-                      详情信息
+                      {t("detail.title")}
                     </DialogTitle>
                     {visibleFields.map((key) => (
                       <div key={key} className="mb-2">
-                        <strong className="inline-block w-32">
-                          {allFields.find((f) => f.key === key)?.label}:
+                        <strong className="inline-block w-32 text-muted-foreground">
+                          {t(`table.fields.${key}`)}:
                         </strong>
                         {Array.isArray(detailRow[key])
                           ? detailRow[key].join(", ")
@@ -600,14 +814,15 @@ export default function SurveyTablePage() {
               disabled={currentPage === 1}
               onClick={() => setCurrentPage((p) => p - 1)}
             >
-              上一页
+              {t("pagination.prev")}
             </Button>
 
             {/* 当前页 / 总页数显示 */}
             <div className="text-sm text-muted-foreground">
-              第 <span className="font-medium text-primary">{currentPage}</span>{" "}
-              页 / 共{" "}
-              <span className="font-medium text-primary">{totalPages}</span> 页
+              {t("pagination.pageIndicator", {
+                currentPage,
+                totalPages,
+              })}
             </div>
 
             {/* 下一页按钮 */}
@@ -617,7 +832,7 @@ export default function SurveyTablePage() {
               disabled={currentPage === totalPages}
               onClick={() => setCurrentPage((p) => p + 1)}
             >
-              下一页
+              {t("pagination.next")}
             </Button>
 
             {/* 跳转页功能 */}
@@ -628,7 +843,7 @@ export default function SurveyTablePage() {
                 max={totalPages}
                 value={jumpPageInput}
                 onChange={(e) => setJumpPageInput(e.target.value)}
-                placeholder="页码"
+                placeholder={t("pagination.jumpPlaceholder")}
                 className="w-20 h-8"
               />
               <Button
@@ -645,7 +860,7 @@ export default function SurveyTablePage() {
                   }
                 }}
               >
-                跳转
+                {t("pagination.jump")}
               </Button>
             </div>
           </div>
@@ -661,9 +876,7 @@ export default function SurveyTablePage() {
             <div className="absolute w-10 h-10 rounded-full border-4 border-primary border-t-transparent animate-spin" />
             <div className="w-4 h-4 bg-primary rounded-full" />
           </div>
-          <p className="text-center text-base font-medium">
-            正在加载数据，请稍候...
-          </p>
+          <p className="text-center text-base font-medium">{t("loading")}</p>
         </motion.div>
       )}
     </div>

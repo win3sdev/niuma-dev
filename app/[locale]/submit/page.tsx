@@ -131,11 +131,13 @@ export default function SubmitPage() {
     e.preventDefault();
     setSubmitStatus("idle");
 
+    if (!recaptchaToken) {
+      toast.error("请先通过验证码验证", { position: "top-center" });
+      return;
+    }
+
     setIsSubmitting(true);
     const trackData = mouseDataRef.current.join(";");
-
-    setSubmitStatus("success");
-    // console.log(formData);
 
     try {
       const response = await fetch("/api/submit", {
@@ -146,11 +148,23 @@ export default function SubmitPage() {
         body: JSON.stringify({
           ...formData,
           mouseTrack: trackData,
+          recaptchaToken,
         }),
       });
 
       const result = await response.json();
       // console.log(result);
+
+      if (result.success) {
+        setSubmitStatus("success");
+        toast.success(t("success"), { duration: 3000, position: "top-center" });
+
+        setRecaptchaToken(null);
+        recaptchaRef.current?.reset();
+      } else {
+        setSubmitStatus("error");
+        toast.error(t("error"), { duration: 3000, position: "top-center" });
+      }
     } catch (error) {
       console.error("Error submitting form:", error);
       setSubmitStatus("error");
@@ -205,8 +219,8 @@ export default function SubmitPage() {
   return (
     <div className="max-w-[1800px] mx-auto px-4 py-12 space-y-16 text-base text-foreground">
       <div className="mb-8 text-center">
-        {/* <h1 className="text-4xl font-bold">{t("title")}</h1> */}
-        <h1 className="text-4xl font-bold">「牛马.ICU」 超时工作黑名单</h1>
+        {/* <h1 className="text-4xl font-bold"></h1> */}
+        <h1 className="text-4xl font-bold">{t("title")}</h1>
         <p className="text-lg text-muted-foreground mt-2">{t("description")}</p>
       </div>
 
@@ -219,14 +233,14 @@ export default function SubmitPage() {
           {/* 第一部分 */}
           <div className="max-w-3xl mx-auto p-6 bg-white dark:bg-neutral-900 rounded-lg shadow-md space-y-6">
             <h2 className="text-2xl font-semibold text-gray-900 dark:text-gray-100">
-              一、基本信息
+              {t("section1.title")}
             </h2>
             <div className="mb-6 p-6 bg-white dark:bg-neutral-800 rounded-lg border border-gray-200 dark:border-gray-700 shadow-md">
               <p className="mt-3 text-sm text-gray-700 dark:text-gray-300 leading-relaxed">
-                我们会在以下问题询问关于您的基本信息。
+                {t("section1.description1")}
               </p>
               <p className="mt-2 text-sm text-yellow-600 dark:text-yellow-400 font-semibold">
-                ⚠️ 对于敏感或者容易暴露您身份的问题，您可以选择不透露
+                {t("section1.description2")}
               </p>
             </div>
 
@@ -339,10 +353,10 @@ export default function SubmitPage() {
                 htmlFor="gender"
                 className="block text-sm font-medium mb-1"
               >
-                性别
+                {t("gender.label")}
               </label>
               <p className="text-sm text-neutral-500 dark:text-neutral-400 mb-2">
-                请选择您的性别。
+                {t("gender.description")}
               </p>
               <select
                 id="gender"
@@ -353,11 +367,13 @@ export default function SubmitPage() {
                 required
               >
                 <option value="" disabled>
-                  请选择
+                  {t("gender.placeholder")}
                 </option>
-                <option value="男">男</option>
-                <option value="女">女</option>
-                <option value="其他性别/不愿透露">其他性别/不愿透露</option>
+                <option value="男">{t("gender.options.male")}</option>
+                <option value="女">{t("gender.options.female")}</option>
+                <option value="其他性别/不愿透露">
+                  {t("gender.options.other")}
+                </option>
               </select>
             </div>
 
@@ -367,10 +383,10 @@ export default function SubmitPage() {
                 htmlFor="ageRange"
                 className="block text-sm font-medium mb-1"
               >
-                年龄范围
+                {t("ageRange.label")}
               </label>
               <p className="text-sm text-neutral-500 dark:text-neutral-400 mb-2">
-                请选择您的年龄段。
+                {t("ageRange.description")}
               </p>
               <select
                 id="ageRange"
@@ -381,14 +397,18 @@ export default function SubmitPage() {
                 required
               >
                 <option value="" disabled>
-                  请选择
+                  {t("ageRange.placeholder")}
                 </option>
-                <option value="18岁以下">18岁以下</option>
-                <option value="18 - 24">18 - 24</option>
-                <option value="25 - 34">25 - 34</option>
-                <option value="35 - 54">35 - 54</option>
-                <option value="55以上">55以上</option>
-                <option value="不愿透露">不愿透露</option>
+                <option value="18岁以下">
+                  {t("ageRange.options.under18")}
+                </option>
+                <option value="18 - 24">{t("ageRange.options.18_24")}</option>
+                <option value="25 - 34">{t("ageRange.options.25_34")}</option>
+                <option value="35 - 54">{t("ageRange.options.35_54")}</option>
+                <option value="55以上">{t("ageRange.options.55plus")}</option>
+                <option value="不愿透露">
+                  {t("ageRange.options.undisclosed")}
+                </option>
               </select>
             </div>
 
@@ -398,10 +418,10 @@ export default function SubmitPage() {
                 htmlFor="occupation"
                 className="block text-sm font-medium mb-1"
               >
-                职业类别
+                {t("occupation.label")}
               </label>
               <p className="text-sm text-neutral-500 dark:text-neutral-400 mb-2">
-                请选择您的职业类别。
+                {t("occupation.description")}
               </p>
               <select
                 id="occupation"
@@ -412,14 +432,20 @@ export default function SubmitPage() {
                 required
               >
                 <option value="" disabled>
-                  请选择
+                  {t("occupation.placeholder")}
                 </option>
-                <option value="外卖员/快递员">外卖员/快递员</option>
+                <option value="外卖员/快递员">
+                  {t("occupation.options.delivery")}
+                </option>
                 <option value="工人/体力劳动者">
-                  工人/体力劳动者（工厂、建筑工地等）
+                  {t("occupation.options.labor")}
                 </option>
-                <option value="网约车司机/代驾">网约车司机/代驾</option>
-                <option value="货运/卡车司机">货运/卡车司机</option>
+                <option value="网约车司机/代驾">
+                  {t("occupation.options.ride")}
+                </option>
+                <option value="货运/卡车司机">
+                  {t("occupation.options.truck")}
+                </option>
               </select>
             </div>
 
@@ -429,10 +455,10 @@ export default function SubmitPage() {
                 htmlFor="companyName"
                 className="block text-sm font-medium mb-1"
               >
-                公司名称
+                {t("companyName.label")}
               </label>
               <p className="text-sm text-neutral-500 dark:text-neutral-400 mb-2">
-                请填写您所在公司的名称。
+                {t("companyName.description")}
               </p>
               <input
                 type="text"
@@ -440,7 +466,7 @@ export default function SubmitPage() {
                 name="companyName"
                 value={formData.companyName}
                 onChange={handleChange}
-                placeholder="例如：字节跳动"
+                placeholder={t("companyName.placeholder")}
                 className="text-neutral-800 dark:text-white w-full px-4 py-2 rounded-lg border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900 focus:outline-none focus:ring-2 focus:ring-blue-500"
                 required
               />
@@ -452,10 +478,10 @@ export default function SubmitPage() {
                 htmlFor="companySize"
                 className="block text-sm font-medium mb-1"
               >
-                公司规模
+                {t("companySize.label")}
               </label>
               <p className="text-sm text-neutral-500 dark:text-neutral-400 mb-2">
-                请选择您所在公司的人员规模。
+                {t("companySize.description")}
               </p>
               <select
                 id="companySize"
@@ -466,13 +492,19 @@ export default function SubmitPage() {
                 required
               >
                 <option value="" disabled>
-                  请选择
+                  {t("companySize.placeholder")}
                 </option>
-                <option value="小型（1 - 50人）">小型（1 - 50人）</option>
-                <option value="中型（51 - 500人）">中型（51 - 500人）</option>
-                <option value="大型（501人以上）">大型（501人以上）</option>
-                <option value="无固定雇主（如平台工作者）">
-                  无固定雇主（如平台工作者）
+                <option value="小型（1 - 50人）">
+                  {t("companySize.options.small")}
+                </option>
+                <option value="中型（51 - 500人）">
+                  {t("companySize.options.medium")}
+                </option>
+                <option value="大型（501人以上）">
+                  {t("companySize.options.large")}
+                </option>
+                <option value="无固定雇主（如平台工作者)">
+                  {t("companySize.options.noEmployer")}
                 </option>
               </select>
             </div>
@@ -483,10 +515,10 @@ export default function SubmitPage() {
                 htmlFor="companyType"
                 className="block text-sm font-medium mb-1"
               >
-                公司性质
+                {t("companyType.label")}
               </label>
               <p className="text-sm text-neutral-500 dark:text-neutral-400 mb-2">
-                请选择您所在公司的性质。
+                {t("companyType.description")}
               </p>
               <select
                 id="companyType"
@@ -497,13 +529,19 @@ export default function SubmitPage() {
                 required
               >
                 <option value="" disabled>
-                  请选择
+                  {t("companyType.placeholder")}
                 </option>
-                <option value="国企">国企</option>
-                <option value="外企">外企</option>
-                <option value="私企">私企</option>
-                <option value="平台/劳务派遣">平台/劳务派遣</option>
-                <option value="政府">政府</option>
+                <option value="国企">
+                  {t("companyType.options.stateOwned")}
+                </option>
+                <option value="外企">{t("companyType.options.foreign")}</option>
+                <option value="私企">{t("companyType.options.private")}</option>
+                <option value="平台/劳务派遣">
+                  {t("companyType.options.platform")}
+                </option>
+                <option value="政府">
+                  {t("companyType.options.government")}
+                </option>
               </select>
             </div>
           </div>
@@ -511,14 +549,14 @@ export default function SubmitPage() {
           {/* 第二部分 */}
           <div className="max-w-3xl mx-auto p-6 bg-white dark:bg-neutral-900 rounded-lg shadow-md space-y-6">
             <h2 className="text-2xl font-semibold text-gray-900 dark:text-gray-100">
-              二、工作现状
+              {t("section2.title")}
             </h2>
             <div className="mb-6 p-6 bg-white dark:bg-neutral-800 rounded-lg border border-gray-200 dark:border-gray-700 shadow-md">
               <p className="mt-3 text-sm text-gray-700 dark:text-gray-300 leading-relaxed">
-                我们会在以下问题中询问关于您的工作现状
+                {t("section2.description1")}
               </p>
               <p className="mt-2 text-sm text-yellow-600 dark:text-yellow-400 font-semibold">
-                ⚠️ 对于敏感或者容易暴露您身份的问题，您可以选择不透露
+                {t("section2.description2")}
               </p>
             </div>
             {/* 平均每日工作时长 */}
@@ -527,10 +565,10 @@ export default function SubmitPage() {
                 htmlFor="dailyWorkHours"
                 className="block text-sm font-medium mb-1"
               >
-                平均每日工作时长
+                {t("dailyWorkHours.label")}
               </label>
               <p className="text-sm text-neutral-500 dark:text-neutral-400 mb-2">
-                请选择您通常每天的工作时长。
+                {t("dailyWorkHours.description")}
               </p>
               <select
                 id="dailyWorkHours"
@@ -541,12 +579,20 @@ export default function SubmitPage() {
                 required
               >
                 <option value="" disabled>
-                  请选择
+                  {t("dailyWorkHours.placeholder")}
                 </option>
-                <option value="小于等于 8 小时">小于等于 8 小时</option>
-                <option value="8 - 12 小时">8 - 12 小时</option>
-                <option value="大于等于 12 小时">大于等于 12 小时</option>
-                <option value="弹性/不定时">弹性/不定时</option>
+                <option value="小于等于 8 小时">
+                  {t("dailyWorkHours.options.le8")}
+                </option>
+                <option value="8 - 12 小时">
+                  {t("dailyWorkHours.options.8to12")}
+                </option>
+                <option value="大于等于 12 小时">
+                  {t("dailyWorkHours.options.ge12")}
+                </option>
+                <option value="弹性/不定时">
+                  {t("dailyWorkHours.options.flexible")}
+                </option>
               </select>
             </div>
 
@@ -556,10 +602,10 @@ export default function SubmitPage() {
                 htmlFor="weeklyWorkDays"
                 className="block text-sm font-medium mb-1"
               >
-                平均每周工作天数
+                {t("weeklyWorkDays.label")}
               </label>
               <p className="text-sm text-neutral-500 dark:text-neutral-400 mb-2">
-                您通常每周工作几天？
+                {t("weeklyWorkDays.description")}
               </p>
               <select
                 id="weeklyWorkDays"
@@ -570,11 +616,15 @@ export default function SubmitPage() {
                 required
               >
                 <option value="" disabled>
-                  请选择
+                  {t("weeklyWorkDays.placeholder")}
                 </option>
-                <option value="五天或小于五天">五天或小于五天</option>
-                <option value="六天">六天</option>
-                <option value="七天">七天</option>
+                <option value="五天或小于五天">
+                  {t("weeklyWorkDays.options.fiveOrLess")}
+                </option>
+                <option value="六天">{t("weeklyWorkDays.options.six")}</option>
+                <option value="七天">
+                  {t("weeklyWorkDays.options.seven")}
+                </option>
               </select>
             </div>
 
@@ -584,10 +634,10 @@ export default function SubmitPage() {
                 htmlFor="overtimePay"
                 className="block text-sm font-medium mb-1"
               >
-                如果您需要加班，是否有加班报酬？
+                {t("overtimePay.label")}
               </label>
               <p className="text-sm text-neutral-500 dark:text-neutral-400 mb-2">
-                可根据实际情况选择加班补偿方式。
+                {t("overtimePay.description")}
               </p>
               <select
                 id="overtimePay"
@@ -598,17 +648,23 @@ export default function SubmitPage() {
                 required
               >
                 <option value="" disabled>
-                  请选择
+                  {t("overtimePay.placeholder")}
                 </option>
-                <option value="不加班">不加班</option>
+                <option value="不加班">
+                  {t("overtimePay.options.noOvertime")}
+                </option>
                 <option value="全额支付（1.5倍正常工资）">
-                  全额支付（1.5倍正常工资）
+                  {t("overtimePay.options.fullPay")}
                 </option>
                 <option value="部分支付（存在不足法定1.5倍工资）">
-                  部分支付（存在不足法定1.5倍工资）
+                  {t("overtimePay.options.partialPay")}
                 </option>
-                <option value="无偿加班">无偿加班</option>
-                <option value="按件/按时计费">按件/按时计费</option>
+                <option value="无偿加班">
+                  {t("overtimePay.options.noPay")}
+                </option>
+                <option value="按件/按时计费">
+                  {t("overtimePay.options.pieceRate")}
+                </option>
               </select>
             </div>
           </div>
@@ -616,15 +672,14 @@ export default function SubmitPage() {
           {/* 第三部分 */}
           <div className="max-w-3xl mx-auto p-6 bg-white dark:bg-neutral-900 rounded-lg shadow-md space-y-6">
             <h2 className="text-2xl font-semibold text-gray-900 dark:text-gray-100">
-              三、超时工作的影响与诉求
+              {t("section3.title")}
             </h2>
             <div className="mb-6 p-6 bg-white dark:bg-neutral-800 rounded-lg border border-gray-200 dark:border-gray-700 shadow-md">
               <p className="mt-3 text-sm text-gray-700 dark:text-gray-300 leading-relaxed">
-                我们会在以下问题中询问关于您超时工作的影响与您的诉求
+                {t("section3.description1")}
               </p>
               <p className="mt-2 text-sm text-yellow-600 dark:text-yellow-400 font-semibold">
-                ⚠️
-                以下问题均为「选填」，您可以选择跳过并直接提交，对于敏感或者容易暴露您身份的问题，您可以选择不透露
+                {t("section3.description2")}
               </p>
             </div>
             {/* 是否因拒绝加班或质疑工作安排而面临负面后果 */}
@@ -633,10 +688,10 @@ export default function SubmitPage() {
                 htmlFor="negativeConsequence"
                 className="block text-sm font-medium mb-1"
               >
-                是否因拒绝加班或质疑工作安排而面临负面后果？
+                {t("negativeConsequence.label")}
               </label>
               <p className="text-sm text-neutral-500 dark:text-neutral-400 mb-2">
-                如考核任务压力、批评、降薪、解雇威胁等。
+                {t("negativeConsequence.description")}
               </p>
               <select
                 id="negativeConsequence"
@@ -647,63 +702,71 @@ export default function SubmitPage() {
                 required
               >
                 <option value="" disabled>
-                  请选择
+                  {t("negativeConsequence.placeholder")}
                 </option>
-                <option value="是">是</option>
-                <option value="否">否</option>
-                <option value="不确定">不确定</option>
+                <option value="是">
+                  {t("negativeConsequence.options.yes")}
+                </option>
+                <option value="否">
+                  {t("negativeConsequence.options.no")}
+                </option>
+                <option value="不确定">
+                  {t("negativeConsequence.options.uncertain")}
+                </option>
               </select>
             </div>
 
             {/* 您因「长时间工作」出现过哪些问题？ */}
             <div className="mb-6">
               <label className="block text-sm font-medium mb-1">
-                您因「长时间工作」出现过哪些问题？（可多选）
+                {t("longWorkIssues.label")}
               </label>
               <p className="text-sm text-neutral-500 dark:text-neutral-400 mb-2">
-                可选择多个选项，或补充填写其他问题。
+                {t("longWorkIssues.description")}
               </p>
               <div className="space-y-2">
-                {[
-                  "身体健康（如腰痛、视力下降）",
-                  "心理压力（如抑郁、焦虑、失眠）",
-                  "人际或家庭关系紧张",
-                ].map((option) => (
-                  <div key={option} className="flex items-center">
+                {["health", "mental", "relationships"].map((key) => (
+                  <div key={key} className="flex items-center">
                     <input
                       type="checkbox"
-                      id={option}
-                      value={option}
+                      id={key}
+                      value={t(`longWorkIssues.options.${key}`)}
                       checked={
-                        formData.longWorkIssues?.includes(option) || false
+                        formData.longWorkIssues?.includes(
+                          t(`longWorkIssues.options.${key}`)
+                        ) || false
                       }
                       onChange={handleCheckboxChange}
                       className="mr-2"
                     />
                     <label
-                      htmlFor={option}
+                      htmlFor={key}
                       className="text-sm text-neutral-800 dark:text-neutral-200"
                     >
-                      {option}
+                      {t(`longWorkIssues.options.${key}`)}
                     </label>
                   </div>
                 ))}
 
-                {/* 其他 Option */}
+                {/* 其他选项 */}
                 <div className="flex items-center">
                   <input
                     type="checkbox"
-                    id="longWorkIssuesOther"
-                    value="其他"
-                    checked={formData.longWorkIssues?.includes("其他") || false}
+                    id="other"
+                    value={t("longWorkIssues.options.other")}
+                    checked={
+                      formData.longWorkIssues?.includes(
+                        t("longWorkIssues.options.other")
+                      ) || false
+                    }
                     onChange={handleCheckboxChange}
                     className="mr-2"
                   />
                   <label
-                    htmlFor="longWorkIssuesOther"
+                    htmlFor="other"
                     className="text-sm text-neutral-800 dark:text-neutral-200"
                   >
-                    其他
+                    {t("longWorkIssues.options.other")}
                   </label>
                   {showOtherInput && (
                     <input
@@ -711,7 +774,7 @@ export default function SubmitPage() {
                       name="longWorkIssuesOtherText"
                       value={formData.longWorkIssuesOtherText || ""}
                       onChange={handleChange}
-                      placeholder="请输入其他问题"
+                      placeholder={t("longWorkIssues.otherPlaceholder")}
                       className="ml-4 flex-1 px-3 py-1 rounded border border-neutral-300 dark:border-neutral-700 bg-white dark:bg-neutral-900 text-sm"
                     />
                   )}
@@ -722,28 +785,24 @@ export default function SubmitPage() {
             {/* 遭受过哪些歧视 */}
             <div className="mb-6">
               <label className="block text-sm font-medium text-gray-900 dark:text-gray-100 mb-1">
-                遭受过哪些歧视？（可多选）
+                {t("discriminationReasons.label")}
               </label>
               <p className="text-sm text-gray-600 dark:text-gray-400 mb-3">
-                勾选您认为存在的问题，可多选
+                {t("discriminationReasons.description")}
               </p>
 
               <div className="space-y-2">
-                {[
-                  "性别",
-                  "年龄",
-                  "生育/婚姻",
-                  "身份（如地域、学历、民族、性向等）",
-                ].map((option) => (
-                  <div key={option} className="flex items-center">
+                {["gender", "age", "marriage", "identity"].map((key) => (
+                  <div key={key} className="flex items-center">
                     <input
                       type="checkbox"
-                      id={`discriminationReasons-${option}`}
+                      id={`discriminationReasons-${key}`}
                       name="discriminationReasons"
-                      value={option}
+                      value={t(`discriminationReasons.options.${key}`)}
                       checked={
-                        formData.discriminationReasons?.includes(option) ||
-                        false
+                        formData.discriminationReasons?.includes(
+                          t(`discriminationReasons.options.${key}`)
+                        ) || false
                       }
                       onChange={(e) => {
                         const value = e.target.value;
@@ -763,10 +822,10 @@ export default function SubmitPage() {
                       className="mr-2"
                     />
                     <label
-                      htmlFor={`discriminationReasons-${option}`}
+                      htmlFor={`discriminationReasons-${key}`}
                       className="text-sm text-neutral-800 dark:text-neutral-200"
                     >
-                      {option}
+                      {t(`discriminationReasons.options.${key}`)}
                     </label>
                   </div>
                 ))}
@@ -777,16 +836,22 @@ export default function SubmitPage() {
                     type="checkbox"
                     id="discriminationReasons-other"
                     name="discriminationReasons"
-                    value="其他"
+                    value={t("discriminationReasons.options.other")}
                     checked={
-                      formData.discriminationReasons?.includes("其他") || false
+                      formData.discriminationReasons?.includes(
+                        t("discriminationReasons.options.other")
+                      ) || false
                     }
                     onChange={(e) => {
                       const checked = e.target.checked;
                       const updated = checked
-                        ? [...(formData.discriminationReasons || []), "其他"]
+                        ? [
+                            ...(formData.discriminationReasons || []),
+                            t("discriminationReasons.options.other"),
+                          ]
                         : (formData.discriminationReasons || []).filter(
-                            (v) => v !== "其他"
+                            (v) =>
+                              v !== t("discriminationReasons.options.other")
                           );
                       handleChange({
                         target: {
@@ -801,15 +866,17 @@ export default function SubmitPage() {
                     htmlFor="discriminationReasons-other"
                     className="text-sm text-neutral-800 dark:text-neutral-200"
                   >
-                    其他
+                    {t("discriminationReasons.options.other")}
                   </label>
-                  {formData.discriminationReasons?.includes("其他") && (
+                  {formData.discriminationReasons?.includes(
+                    t("discriminationReasons.options.other")
+                  ) && (
                     <input
                       type="text"
                       name="discriminationReasonsOther"
                       value={formData.discriminationReasonsOther || ""}
                       onChange={handleChange}
-                      placeholder="请补充其他说明"
+                      placeholder={t("discriminationReasons.otherPlaceholder")}
                       className="flex-1 px-3 py-1 rounded border border-neutral-300 dark:border-neutral-700 bg-white dark:bg-neutral-900 text-sm"
                     />
                   )}
@@ -817,32 +884,34 @@ export default function SubmitPage() {
               </div>
             </div>
 
-            {/* 您的企业是否存在以下「违法违规现象」 */}
+            {/* 您的企业是否存在以下「违法违规现象」？（可多选） */}
             <div className="mb-6">
               <label className="block text-sm font-medium text-gray-900 dark:text-gray-100 mb-1">
-                您的企业是否存在以下「违法违规现象」？（可多选）
+                {t("violationsObserved.label")}
               </label>
               <p className="text-sm text-gray-600 dark:text-gray-400 mb-3">
-                勾选您认为存在的问题，可多选
+                {t("violationsObserved.description")}
               </p>
 
               <div className="space-y-2">
                 {[
-                  "胡乱扣除绩效",
-                  "不缴纳五险一金或社保",
-                  "拖欠工资",
-                  "不签订劳动合同",
-                  "低于法定最低工资",
-                  "开除不给补偿",
-                ].map((option) => (
-                  <div key={option} className="flex items-center">
+                  "performanceDeduction",
+                  "noSocialInsurance",
+                  "wageArrears",
+                  "noLaborContract",
+                  "belowMinimumWage",
+                  "noCompensation",
+                ].map((key) => (
+                  <div key={key} className="flex items-center">
                     <input
                       type="checkbox"
-                      id={`violationsObserved-${option}`}
+                      id={`violationsObserved-${key}`}
                       name="violationsObserved"
-                      value={option}
+                      value={t(`violationsObserved.options.${key}`)}
                       checked={
-                        formData.violationsObserved?.includes(option) || false
+                        formData.violationsObserved?.includes(
+                          t(`violationsObserved.options.${key}`)
+                        ) || false
                       }
                       onChange={(e) => {
                         const value = e.target.value;
@@ -862,10 +931,10 @@ export default function SubmitPage() {
                       className="mr-2"
                     />
                     <label
-                      htmlFor={`violationsObserved-${option}`}
+                      htmlFor={`violationsObserved-${key}`}
                       className="text-sm text-neutral-800 dark:text-neutral-200"
                     >
-                      {option}
+                      {t(`violationsObserved.options.${key}`)}
                     </label>
                   </div>
                 ))}
@@ -876,19 +945,27 @@ export default function SubmitPage() {
                     type="checkbox"
                     id="violationsObserved-other"
                     name="violationsObserved"
-                    value="其他"
+                    value={t("violationsObserved.options.other")}
                     checked={
-                      formData.violationsObserved?.includes("其他") || false
+                      formData.violationsObserved?.includes(
+                        t("violationsObserved.options.other")
+                      ) || false
                     }
                     onChange={(e) => {
                       const checked = e.target.checked;
                       const updated = checked
-                        ? [...(formData.violationsObserved || []), "其他"]
+                        ? [
+                            ...(formData.violationsObserved || []),
+                            t("violationsObserved.options.other"),
+                          ]
                         : (formData.violationsObserved || []).filter(
-                            (v) => v !== "其他"
+                            (v) => v !== t("violationsObserved.options.other")
                           );
                       handleChange({
-                        target: { name: "violationsObserved", value: updated },
+                        target: {
+                          name: "violationsObserved",
+                          value: updated,
+                        },
                       });
                     }}
                     className="mr-2"
@@ -897,15 +974,17 @@ export default function SubmitPage() {
                     htmlFor="violationsObserved-other"
                     className="text-sm text-neutral-800 dark:text-neutral-200"
                   >
-                    其他
+                    {t("violationsObserved.options.other")}
                   </label>
-                  {formData.violationsObserved?.includes("其他") && (
+                  {formData.violationsObserved?.includes(
+                    t("violationsObserved.options.other")
+                  ) && (
                     <input
                       type="text"
                       name="violationsObservedOther"
                       value={formData.violationsObservedOther || ""}
                       onChange={handleChange}
-                      placeholder="请补充其他说明"
+                      placeholder={t("violationsObserved.otherPlaceholder")}
                       className="flex-1 px-3 py-1 rounded border border-neutral-300 dark:border-neutral-700 bg-white dark:bg-neutral-900 text-sm"
                     />
                   )}
@@ -913,30 +992,32 @@ export default function SubmitPage() {
               </div>
             </div>
 
-            {/* 您希望通过曝光您的公司/单位得到哪些改变 */}
+            {/* 您希望通过曝光您的公司/单位得到哪些改变？（可多选） */}
             <div className="mb-6">
               <label className="block text-sm font-medium text-gray-900 dark:text-gray-100 mb-1">
-                您希望通过曝光您的公司/单位得到哪些改变？（可多选）
+                {t("expectedChanges.label")}
               </label>
               <p className="text-sm text-gray-600 dark:text-gray-400 mb-3">
-                可选择多个选项，或补充填写其他问题。
+                {t("expectedChanges.description")}
               </p>
 
               <div className="space-y-2">
                 {[
-                  "缩短工时（反996）",
-                  "支付加班费",
-                  "增加休息日",
-                  "追究企业责任",
-                ].map((option) => (
-                  <div key={option} className="flex items-center">
+                  "shorterHours",
+                  "overtimePay",
+                  "moreRestDays",
+                  "holdCompanyAccountable",
+                ].map((key) => (
+                  <div key={key} className="flex items-center">
                     <input
                       type="checkbox"
-                      id={`expectedChanges-${option}`}
+                      id={`expectedChanges-${key}`}
                       name="expectedChanges"
-                      value={option}
+                      value={t(`expectedChanges.options.${key}`)}
                       checked={
-                        formData.expectedChanges?.includes(option) || false
+                        formData.expectedChanges?.includes(
+                          t(`expectedChanges.options.${key}`)
+                        ) || false
                       }
                       onChange={(e) => {
                         const value = e.target.value;
@@ -956,10 +1037,10 @@ export default function SubmitPage() {
                       className="mr-2"
                     />
                     <label
-                      htmlFor={`expectedChanges-${option}`}
+                      htmlFor={`expectedChanges-${key}`}
                       className="text-sm text-neutral-800 dark:text-neutral-200"
                     >
-                      {option}
+                      {t(`expectedChanges.options.${key}`)}
                     </label>
                   </div>
                 ))}
@@ -970,19 +1051,27 @@ export default function SubmitPage() {
                     type="checkbox"
                     id="expectedChanges-other"
                     name="expectedChanges"
-                    value="其他"
+                    value={t("expectedChanges.options.other")}
                     checked={
-                      formData.expectedChanges?.includes("其他") || false
+                      formData.expectedChanges?.includes(
+                        t("expectedChanges.options.other")
+                      ) || false
                     }
                     onChange={(e) => {
                       const checked = e.target.checked;
                       const updated = checked
-                        ? [...(formData.expectedChanges || []), "其他"]
+                        ? [
+                            ...(formData.expectedChanges || []),
+                            t("expectedChanges.options.other"),
+                          ]
                         : (formData.expectedChanges || []).filter(
-                            (v) => v !== "其他"
+                            (v) => v !== t("expectedChanges.options.other")
                           );
                       handleChange({
-                        target: { name: "expectedChanges", value: updated },
+                        target: {
+                          name: "expectedChanges",
+                          value: updated,
+                        },
                       });
                     }}
                     className="mr-2"
@@ -991,15 +1080,17 @@ export default function SubmitPage() {
                     htmlFor="expectedChanges-other"
                     className="text-sm text-neutral-800 dark:text-neutral-200"
                   >
-                    其他
+                    {t("expectedChanges.options.other")}
                   </label>
-                  {formData.expectedChanges?.includes("其他") && (
+                  {formData.expectedChanges?.includes(
+                    t("expectedChanges.options.other")
+                  ) && (
                     <input
                       type="text"
                       name="expectedChangesOther"
                       value={formData.expectedChangesOther || ""}
                       onChange={handleChange}
-                      placeholder="请补充其他说明"
+                      placeholder={t("expectedChanges.otherPlaceholder")}
                       className="flex-1 px-3 py-1 rounded border border-neutral-300 dark:border-neutral-700 bg-white dark:bg-neutral-900 text-sm"
                     />
                   )}
@@ -1010,14 +1101,14 @@ export default function SubmitPage() {
 
           <div className="max-w-3xl mx-auto p-6 bg-white dark:bg-neutral-900 rounded-lg shadow-md space-y-6">
             <h2 className="text-2xl font-semibold text-gray-900 dark:text-gray-100">
-              四、安全词与故事分享
+              {t("section4.title")}
             </h2>
             <div className="mb-6 p-6 bg-white dark:bg-neutral-800 rounded-lg border border-gray-200 dark:border-gray-700 shadow-md">
               <p className="mt-3 text-sm text-gray-700 dark:text-gray-300 leading-relaxed">
-                我们会在以下问题中询问关于您超时工作的影响与您的诉求
+                {t("section4.description1")}
               </p>
               <p className="mt-2 text-sm text-yellow-600 dark:text-yellow-400 font-semibold">
-                ⚠️ 对于敏感或者容易暴露您身份的问题，您可以选择不透露
+                {t("section4.description2")}
               </p>
             </div>
             {/* 安全词 */}
@@ -1029,7 +1120,7 @@ export default function SubmitPage() {
                 {t("safaKeyword.label")}
               </label>
               <p className="text-sm text-neutral-500 dark:text-neutral-400 mb-2">
-                您可以在这里填写一个安全词，作为未来可能删除问卷的密码。
+                {t("safaKeyword.description")}
               </p>
               <input
                 type="text"
@@ -1043,23 +1134,17 @@ export default function SubmitPage() {
               />
             </div>
 
-            {/* 学生的评论 */}
+            {/* 评论 */}
             <div>
-              <label
-                htmlFor="storyComments"
-                className="block text-sm font-medium mb-1"
-              >
-                评论、经历与故事（我们会选取一些评论单独发布）
+              <label htmlFor="story" className="block text-sm font-medium mb-1">
+                {t("storyComments.label")}
               </label>
-              {/* <p className="text-sm text-neutral-500 dark:text-neutral-400 mb-2">
-              {t("studentComments.description")}
-            </p> */}
               <textarea
                 id="story"
                 name="story"
                 value={formData.story}
                 onChange={handleChange}
-                placeholder="请输入您的评论"
+                placeholder={t("storyComments.placeholder")}
                 rows={4}
                 className="text-neutral-800 dark:text-white w-full px-4 py-2 rounded-lg border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900 focus:outline-none focus:ring-2 focus:ring-blue-500"
                 required
@@ -1068,13 +1153,13 @@ export default function SubmitPage() {
           </div>
 
           {/* reCAPTCHA 不做隐式状态 */}
-          {/* <div className="pt-4">
+          <div className="pt-4">
             <ReCAPTCHA
               sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY!}
               ref={recaptchaRef}
               onChange={onRecaptchaChange}
             />
-          </div> */}
+          </div>
 
           {/* 提交按钮 */}
           <div className="pt-4">

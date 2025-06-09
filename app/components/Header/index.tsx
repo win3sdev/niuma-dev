@@ -88,7 +88,7 @@ export default function Header() {
               {t("site.title")}
             </span>
           </Link>
-          <nav className="hidden md:flex items-center space-x-4 text-sm font-medium">
+          <nav className="hidden md:flex items-center space-x-4 text-sm font-medium ml-10">
             {navigationLinks.map((link) => {
               const isActive = pathname === link.href;
 
@@ -104,7 +104,7 @@ export default function Header() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className={baseClass + activeClass}
+                  className={baseClass + activeClass + " mx-8"}
                 >
                   <link.icon className="h-5 w-5 transition-transform duration-300 group-hover:scale-110 group-hover:-rotate-6" />
                   <span className="transition-colors duration-200 group-hover:text-blue-600 dark:group-hover:text-blue-400">

@@ -1,64 +1,64 @@
 {
   "home": {
-    "intro": {
-      "part1": "本项目由 ",
-      "part2": " 运营，灵感源自 996.ICU，致力于为被压榨的中国学生发声。",
-      "part3": "$Li社区团队"
+    "hero": {
+      "title": "你的境遇，掷地有声",
+      "subtitle": "牛马ICU | $Li",
+      "description": "本项目由 $Li社区团队 运营，在极权环境中，$LI 社区致力于捍卫人权、新闻自由与言论自由。我们凝聚共识，共同推动这些核心价值的实现，让每一位劳动者都能活得有尊严。",
+      "buttonExpose": "立即曝光血汗公司",
+      "buttonView": "查看曝光名单",
+      "tmp1": "本项目由",
+      "tmp2": "$Li社区团队",
+      "tmp3": "运营，在极权环境中，",
+      "tmp4": "$LI 社区",
+      "tmp5": "致力于",
+      "tmp6": "捍卫人权、新闻自由与言论自由。",
+      "tmp7": "我们凝聚共识，共同推动这些核心价值的实现，让每一位劳动者都能",
+      "tmp8": "活得有尊严。"
     },
-    "core": {
-      "title": "核心理念",
-      "part1": "希望建设一个 ",
-      "part2": "独一无二的社区",
-      "part3": "，在中国这样的极权环境中，",
-      "part4": "捍卫人权、新闻自由与言论自由",
-      "part5": "。 随着 $LI 社区的壮大，我们希望凝聚共识，共同推动这些核心价值的实现。"
+    "card1": {
+      "title": "社区核心理念",
+      "description": "$LI 希望建设一个独一无二的社区，在中国这样的极权环境中，捍卫人权、新闻自由与言论自由。随着 $LI 社区的壮大，我们希望凝聚共识，共同推动这些核心价值的实现。",
+      "tmp1": "希望建设一个独一无二的社区，在中国这样的极权环境中，",
+      "tmp2": "捍卫人权、新闻自由与言论自由。",
+      "tmp3": "随着",
+      "tmp4": "$LI 社区的壮大",
+      "tmp5": "，我们希望凝聚共识，共同推动这些核心价值的实现。"
     },
-    "system": {
-      "title": "什么是 611 学制？",
-      "quote": "“611Study” 指的是“早6点上学，晚11点放学，生病 ICU”。这已成为中国中学的普遍现象。",
-      "text": "学生每周在校学习 ",
-      "highlight": "超过 102 小时",
-      "consequence": "，心理与身体健康遭受严重侵蚀。这一模式，",
-      "warning": "连监狱都不如",
-      "ending": "。"
+    "card2": {
+      "title": "“牛马 ICU”——曝光血汗公司",
+      "description": "Li 社区最新发起的项目——<strong>“牛马 ICU”</strong>，旨在收集全国超时工作公司的名单，让公众了解哪些企业在压榨劳动者，并以此向相关部门施压，敦促他们履行职责，<strong>改善中国劳工的生存环境。</strong>",
+      "note": "如果你或你身边的人曾遭遇过超时工作、无偿加班、恶劣的工作条件，你可以匿名登记这些公司的信息，帮助更多的劳动者规避这些“血汗工厂”，并共同推动社会进步。"
     },
-    "actions": {
-      "title": "我们能做什么？",
-      "list": [
-        "填写 ",
-        "超时学习学校登记问卷",
-        "，更新全国 ",
-        "耻辱名单",
-        "互助式向异地教育局、市长热线举报上榜学校",
-        "参与社区，提出新的议题与解决方案",
-        "下午6点钟放学回家 🕕 —— 这是应有的权利"
-      ]
+    "solidarityCard": {
+      "title": "团结一致，推动变革",
+      "description": "如果劳动部门和工会选择视而不见，那就让我们团结一致，<strong>逼迫他们完成本职工作</strong>。每一份登记、每一次曝光，都是向血汗企业和不作为的机构施加压力的一步。",
+      "slogan": "让“牛马”活得像人，而不是机器！"
     },
-    "vision": {
-      "title": "原则与愿景",
-      "content": "611Study.ICU 是一场学生自下而上的呐喊，我们鼓励来自不同地区、不同领域的人士加入讨论。本社区提倡 ",
-      "highlight": "成熟、负责任、有建设性的发言",
-      "ending": "，共同探索解决之道。"
+    "backgroundCard": {
+      "title": "项目发起与宗旨",
+      "description": "<strong>牛马ICU</strong> 是由 <strong>「$Li 社区」</strong>与 <strong>「李老师不是你老师」</strong> 发起的公益项目，我们希望调查曝光中国国内存在的一切剥削打工人的恶劣行为！",
+      "slogan": "拒绝996！拒绝无休止加班！拒绝剥削！拒绝压榨！拒绝压迫！拒绝一切不平等的待遇！"
     },
-    "inspiration": {
-      "title": "我们的灵感来源",
-      "thanks": "特别鸣谢 ",
-      "reference": "996.ICU",
-      "followup": " 的启发与开源项目框架。我们将其精神延续到学生维权领域，为中国孩子争取应有的成长环境。",
-      "note": "请自由发挥你的力量，",
-      "warning": "但无需盲目扩展翻译版本"
-    },
-    "cta": {
-      "title": "加入我们，一起推动改变",
-      "desc": "通过填写问卷、参与社区，我们共同为学生争取应有的权利。",
-      "submit": "填写问卷",
-      "contact": "加入我们"
-    },
-    "footer": {
-      "text": "版权所有"
+    "actionCard": {
+      "title": "立即参与，共同行动！",
+      "submit": {
+        "title": "登记血汗公司",
+        "desc": "填写问卷，提交超时工作企业名单"
+      },
+      "view": {
+        "title": "查看血汗公司名单",
+        "desc": "了解哪些企业存在超时工作问题"
+      },
+      "official": {
+        "title": "访问项目官网",
+        "desc": "获取更多信息，关注最新动态"
+      },
+      "backup": {
+        "title": "备用英文域名",
+        "desc": "如遇访问障碍，请使用此链接"
+      }
     }
   },
-
   "metaTitle": "牛马ICU.",
   "metaDescription": "这是由 「$Li 社区」与「李老师不是你老师」发起的公益项目，我们希望调查曝光中国国内存在的一切剥削打工人的恶劣行为！",
   "navigation": {
@@ -79,64 +79,209 @@
   },
   "site": {
     "title": "牛马ICU",
-    "description": "欢迎参与学校情况调查问卷"
+    "description": "这是由 「$Li 社区」与「李老师不是你老师」发起的公益项目，我们希望调查曝光中国国内存在的一切剥削打工人的恶劣行为！"
   },
   "form": {
     "title": "「牛马.ICU」 超时工作黑名单",
-    "description": "请完整超时工作黑名单的相关情况信息，确保登记资料准确无误。",
+    "description": "请完整填写超市工作的相关情况信息，确保登记资料准确无误。",
     "card": "我们高度重视您的隐私与数据安全。您提交的所有信息均将被严格保密，仅用于学术研究与数据分析，绝不会泄露给任何第三方。感谢您的信任与支持。",
-    "safaKeyword": {
-      "label": "安全词",
-      "description": "用于防止伪造",
-      "placeholder": "请输入安全词"
-    },
     "province": {
       "label": "省份",
-      "placeholder": "请选择省份",
-      "description": "所反映的学校所在省份"
+      "description": "请选择您所在的省份。",
+      "placeholder": "请选择省份"
     },
     "city": {
       "label": "城市",
-      "placeholder": "请输入城市名称",
-      "description": "城市地址"
+      "description": "请选择您所在的城市。",
+      "placeholder": "请选择城市"
     },
     "district": {
       "label": "区县",
-      "placeholder": "请输入区县名称",
-      "description": "区县地址"
+      "description": "请选择您所在的区或县。",
+      "placeholder": "请选择区县"
     },
-    "schoolName": {
-      "label": "学校名称",
-      "placeholder": "请输入学校名称",
-      "description": "学校名称"
+    "gender": {
+      "label": "性别",
+      "description": "请选择您的性别。",
+      "placeholder": "请选择",
+      "options": {
+        "male": "男",
+        "female": "女",
+        "other": "其他性别/不愿透露"
+      }
     },
-    "schoolStartTime": {
-      "label": "上学时间",
-      "description": "日常上学时间，点击右侧时钟按钮可快速填写（AM 表示上午，PM 表示下午）。"
+    "ageRange": {
+      "label": "年龄范围",
+      "description": "请选择您的年龄段。",
+      "placeholder": "请选择",
+      "options": {
+        "under18": "18岁以下",
+        "18_24": "18 - 24",
+        "25_34": "25 - 34",
+        "35_54": "35 - 54",
+        "55plus": "55以上",
+        "undisclosed": "不愿透露"
+      }
     },
-    "schoolEndTime": {
-      "label": "放学时间",
-      "description": "日常放学时间(含晚自习)，点击右侧时钟按钮可快速填写(AM-上午/PM-下午)"
+    "occupation": {
+      "label": "职业类别",
+      "description": "请选择您的职业类别。",
+      "placeholder": "请选择",
+      "options": {
+        "delivery": "外卖员/快递员",
+        "labor": "工人/体力劳动者（工厂、建筑工地等）",
+        "ride": "网约车司机/代驾",
+        "truck": "货运/卡车司机"
+      }
     },
-    "weeklyStudyHours": {
-      "label": "每周在校学习小时数",
-      "placeholder": "请输入每周学习小时数",
-      "description": "请注意是每周！不是每天"
+    "companyName": {
+      "label": "公司名称",
+      "description": "请填写您所在公司的名称。",
+      "placeholder": "例如：字节跳动"
     },
-    "monthlyHolidays": {
-      "label": "每月假期天数",
-      "placeholder": "请输入每月假期天数",
-      "description": "每月放假的天数"
+    "companySize": {
+      "label": "公司规模",
+      "description": "请选择您所在公司的人员规模。",
+      "placeholder": "请选择",
+      "options": {
+        "small": "小型（1 - 50人）",
+        "medium": "中型（51 - 500人）",
+        "large": "大型（501人以上）",
+        "noEmployer": "无固定雇主（如平台工作者）"
+      }
     },
-    "suicideCases": {
-      "label": "2024年学生自杀数",
-      "placeholder": "请输入数字",
-      "description": "您的学校是否有学生心理压力过大甚至选择轻生的情况"
+    "companyType": {
+      "label": "公司性质",
+      "description": "请选择您所在公司的性质。",
+      "placeholder": "请选择",
+      "options": {
+        "stateOwned": "国企",
+        "foreign": "外企",
+        "private": "私企",
+        "platform": "平台/劳务派遣",
+        "government": "政府"
+      }
     },
-    "studentComments": {
-      "label": "学生评论",
-      "placeholder": "请输入您的评论",
-      "description": "请分享您的真实看法"
+    "dailyWorkHours": {
+      "label": "平均每日工作时长",
+      "description": "请选择您通常每天的工作时长。",
+      "placeholder": "请选择",
+      "options": {
+        "le8": "小于等于 8 小时",
+        "8to12": "8 - 12 小时",
+        "ge12": "大于等于 12 小时",
+        "flexible": "弹性/不定时"
+      }
+    },
+    "weeklyWorkDays": {
+      "label": "平均每周工作天数",
+      "description": "您通常每周工作几天？",
+      "placeholder": "请选择",
+      "options": {
+        "fiveOrLess": "五天或小于五天",
+        "six": "六天",
+        "seven": "七天"
+      }
+    },
+    "overtimePay": {
+      "label": "如果您需要加班，是否有加班报酬？",
+      "description": "可根据实际情况选择加班补偿方式。",
+      "placeholder": "请选择",
+      "options": {
+        "noOvertime": "不加班",
+        "fullPay": "全额支付（1.5倍正常工资）",
+        "partialPay": "部分支付（存在不足法定1.5倍工资）",
+        "noPay": "无偿加班",
+        "pieceRate": "按件/按时计费"
+      }
+    },
+    "negativeConsequence": {
+      "label": "是否因拒绝加班或质疑工作安排而面临负面后果？",
+      "description": "如考核任务压力、批评、降薪、解雇威胁等。",
+      "placeholder": "请选择",
+      "options": {
+        "yes": "是",
+        "no": "否",
+        "uncertain": "不确定"
+      }
+    },
+    "longWorkIssues": {
+      "label": "您因「长时间工作」出现过哪些问题？（可多选）",
+      "description": "可选择多个选项，或补充填写其他问题。",
+      "options": {
+        "health": "身体健康（如腰痛、视力下降）",
+        "mental": "心理压力（如抑郁、焦虑、失眠）",
+        "relationships": "人际或家庭关系紧张",
+        "other": "其他"
+      },
+      "otherPlaceholder": "请输入其他问题"
+    },
+    "discriminationReasons": {
+      "label": "遭受过哪些歧视？（可多选）",
+      "description": "勾选您认为存在的问题，可多选",
+      "options": {
+        "gender": "性别",
+        "age": "年龄",
+        "marriage": "生育/婚姻",
+        "identity": "身份（如地域、学历、民族、性向等）",
+        "other": "其他"
+      },
+      "otherPlaceholder": "请补充其他说明"
+    },
+    "violationsObserved": {
+      "label": "您的企业是否存在以下「违法违规现象」？（可多选）",
+      "description": "勾选您认为存在的问题，可多选",
+      "options": {
+        "performanceDeduction": "胡乱扣除绩效",
+        "noSocialInsurance": "不缴纳五险一金或社保",
+        "wageArrears": "拖欠工资",
+        "noLaborContract": "不签订劳动合同",
+        "belowMinimumWage": "低于法定最低工资",
+        "noCompensation": "开除不给补偿",
+        "other": "其他"
+      },
+      "otherPlaceholder": "请补充其他说明"
+    },
+    "expectedChanges": {
+      "label": "您希望通过曝光您的公司/单位得到哪些改变？（可多选）",
+      "description": "可选择多个选项，或补充填写其他问题。",
+      "options": {
+        "shorterHours": "缩短工时（反996）",
+        "overtimePay": "支付加班费",
+        "moreRestDays": "增加休息日",
+        "holdCompanyAccountable": "追究企业责任",
+        "other": "其他"
+      },
+      "otherPlaceholder": "请补充其他说明"
+    },
+    "section1": {
+      "title": "一、基本信息",
+      "description1": "我们会在以下问题询问关于您的基本信息。",
+      "description2": "⚠️ 对于敏感或者容易暴露您身份的问题，您可以选择不透露"
+    },
+    "section2": {
+      "title": "二、工作现状",
+      "description1": "我们会在以下问题中询问关于您的工作现状",
+      "description2": "⚠️ 对于敏感或者容易暴露您身份的问题，您可以选择不透露"
+    },
+    "section3": {
+      "title": "三、超时工作的影响与诉求",
+      "description1": "我们会在以下问题中询问关于您超时工作的影响与您的诉求",
+      "description2": "⚠️ 对于敏感或者容易暴露您身份的问题，您可以选择不透露"
+    },
+    "section4": {
+      "title": "四、安全词与故事分享",
+      "description1": "我们会在以下问题中询问关于您超时工作的影响与您的诉求",
+      "description2": "⚠️ 对于敏感或者容易暴露您身份的问题，您可以选择不透露"
+    },
+    "safaKeyword": {
+      "label": "安全词",
+      "placeholder": "请输入安全词，作为删除问卷的密码",
+      "description": "您可以在这里填写一个安全词，作为未来可能删除问卷的密码。"
+    },
+    "storyComments": {
+      "label": "评论、经历与故事（我们会选取一些评论单独发布）",
+      "placeholder": "请输入您的评论"
     },
     "submit": "提交调查",
     "submitting": "提交中...",
@@ -144,54 +289,90 @@
     "error": "提交失败，请重试。"
   },
   "display": {
-    "title": "学校信息调查表",
-    "card": "所有内容均来自用户投稿，并经人工审核后发布。如您发现信息有误，欢迎联系我们进行更正或删除。",
-    "viewDetails": "查看详情",
-    "noData": "暂无数据",
-    "province": "省份",
-    "city": "城市",
-    "district": "区县",
-    "schoolName": "学校名称",
-    "grade": "年级",
-    "studentComments": "学生评论",
-    "weeklyStudyHours": "每周在校学习小时数",
-    "monthlyHolidays": "每月假期天数",
-    "suicideCases": "2024年学生自杀数",
-    "createdAt": "提交时间",
-    "schoolStartTime": "上学时间",
-    "schoolEndTime": "放学时间",
-    "location": "地理位置",
-    "schoolSchedule": "作息时间",
-    "statistics": "统计数据",
-    "winterVacationDays": "寒假放假天数",
-    "winterTuitionTotal": "寒假补课收费总价",
+    "loading": "正在加载数据，请稍候...",
+    "card": {
+      "viewDetails": "查看详情",
+      "detailTitle": "详细内容"
+    },
+    "detail": {
+      "title": "详情信息"
+    },
+    "fields": {
+      "companyName": "公司名称",
+      "companySize": "公司规模",
+      "companyType": "公司性质",
+      "ageRange": "年龄范围",
+      "province": "省份",
+      "city": "城市",
+      "occupation": "职业",
+      "dailyWorkHours": "平均每天工作时长",
+      "weeklyWorkDays": "平均每周工作天数",
+      "overtimePay": "加班报酬",
+      "negativeConsequence": "是否因拒绝加班或质疑工作安排而面临负面后果",
+      "longWorkIssues": "长时间工作所产生的问题",
+      "discriminationReasons": "职场歧视原因",
+      "violationsObserved": "公司存在的违法违规现象",
+      "expectedChanges": "期望得到的改变",
+      "story": "评论/故事",
+      "gender": "性别"
+    },
+    "table": {
+      "title": "超时工作名单",
+      "settings": {
+        "button": "表格设置",
+        "title": "表格字段设置",
+        "description": "请选择你希望在表格中显示的字段。",
+        "download": "下载数据"
+      },
+      "searchPlaceholder": "请输入",
+      "viewDetail": "查看详情",
+      "empty": "暂无数据",
+      "all": "全部",
+      "actions": "操作",
+      "confirm": "确认",
+      "filterPlaceholder": "请输入关键词",
+      "fields": {
+        "companyName": "公司名称",
+        "companySize": "公司规模",
+        "companyType": "公司性质",
+        "ageRange": "年龄范围",
+        "province": "省份",
+        "city": "城市",
+        "occupation": "职业",
+        "dailyWorkHours": "平均每天工作时长",
+        "weeklyWorkDays": "平均每周工作天数",
+        "overtimePay": "加班报酬",
+        "negativeConsequence": "是否因拒绝加班或质疑工作安排而面临负面后果",
+        "longWorkIssues": "长时间工作所产生的问题",
+        "discriminationReasons": "职场歧视原因",
+        "violationsObserved": "公司存在的违法违规现象",
+        "expectedChanges": "期望得到的改变",
+        "story": "评论/故事",
+        "gender": "性别"
+      },
+
+      "pagination": {
+        "prev": "上一页",
+        "next": "下一页",
+        "jump": "跳转",
+        "jumpPlaceholder": "页码",
+        "pageIndicator": "第 {currentPage} 页 / 共 {totalPages} 页"
+      }
+    },
     "pagination": {
       "prev": "上一页",
       "next": "下一页",
-      "page": "第 {page} 页",
-      "of": "共 {total} 页",
-      "showing": "显示 {start}-{end} 条，共 {total} 条"
+      "jump": "跳转",
+      "jumpPlaceholder": "页码",
+      "pageIndicator": "第 {currentPage} 页 / 共 {totalPages} 页"
     },
-    "filter": {
-      "placeholder": "输入筛选条件",
-      "min": "最小值",
-      "max": "最大值",
-      "apply": "应用筛选",
-      "clear": "清除筛选"
+    
+    "search": {
+      "chevronUp": "收起搜索",
+      "chevronDown": "展开搜索",
+      "btn": "搜索",
+      "placeholder": "请输入企业名称"
     }
-  },
-  "map": {
-    "title": "内容正在建设中",
-    "description": "我们正在努力完善此页面内容，敬请期待。",
-    "backHome": "返回首页"
-  },
-  "charts": {
-    "title": "数据统计图表",
-    "gradeDistribution": "年级分布",
-    "weeklyStudyHoursDistribution": "每周学习小时数分布",
-    "schoolStartTime": "上学时间分布",
-    "schoolEndTime": "放学时间分布（含晚自习）",
-    "provinceDataDistribution": "各省份数据分布"
   },
   "contact": {
     "title": "加入 $Li 社区",
@@ -231,5 +412,31 @@
     "tech": {
       "title": "技术支持 - xROx"
     }
+  },
+  "charts": {
+    "dailyWorkData": "平均每日工作时长分布",
+    "weeklyWorkData": "平均每周工作天数分布",
+    "companySizeData": "公司规模分布",
+    "companyTypeData": "公司性质分布",
+    "overtimePayData": "加班报酬分布",
+    "negativeConsequenceData": "拒绝加班面临负面后果分布",
+    "genderData": "性别分布",
+    "ageRangeData": "年龄范围分布",
+    "provinceBar": {
+      "title": "省份分布",
+      "desc": "显示各省份用户数量分布"
+    },
+    "occupationBar": {
+      "title": "职业分布",
+      "desc": "各职业对应的用户数量分布情况"
+    },
+    "data": {
+      "label": "未知"
+    }
+  },
+  "map": {
+    "title": "内容正在建设中",
+    "description": "我们正在努力完善此页面内容，敬请期待。",
+    "backHome": "返回首页"
   }
 }

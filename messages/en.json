@@ -1,71 +1,11 @@
 {
-  "home": {
-    "intro": {
-      "part1": "This project is operated by ",
-      "part2": ", inspired by 996.ICU, dedicated to voicing out for exploited Chinese students.",
-      "part3": "$Li Community Team"
-    },
-    "core": {
-      "title": "Core Principles",
-      "part1": "We hope to build a ",
-      "part2": "unique community",
-      "part3": " that, in an authoritarian environment like China,",
-      "part4": " defends human rights, press freedom, and freedom of speech",
-      "part5": ". As the $LI community grows, we aim to build consensus and jointly promote these core values."
-    },
-    "system": {
-      "title": "What is the 611 Study System?",
-      "quote": "\"611Study\" refers to \"School starts at 6 AM, ends at 11 PM, sick in ICU.\" This has become a common phenomenon in Chinese middle schools.",
-      "text": "Students spend over ",
-      "highlight": "102 hours per week",
-      "consequence": " at school, severely damaging their mental and physical health. This model is ",
-      "warning": "worse than prison",
-      "ending": "."
-    },
-    "actions": {
-      "title": "What can we do?",
-      "list": [
-        "Fill out the ",
-        "Overtime Study School Registration Survey",
-        ", update the nationwide ",
-        "Shame List",
-        "Report listed schools to out-of-area education bureaus and mayor hotlines collaboratively",
-        "Participate in the community to propose new topics and solutions",
-        "Get off school by 6 PM 🕕 — this is the right we deserve"
-      ]
-    },
-    "vision": {
-      "title": "Principles and Vision",
-      "content": "611Study.ICU is a grassroots shout from students. We encourage people from different regions and fields to join the discussion. Our community advocates for ",
-      "highlight": "mature, responsible, and constructive speech",
-      "ending": " to jointly explore solutions."
-    },
-    "inspiration": {
-      "title": "Our Inspiration",
-      "thanks": "Special thanks to ",
-      "reference": "996.ICU",
-      "followup": " for the inspiration and open-source project framework. We carry forward its spirit into student rights protection, striving for a proper growth environment for Chinese children.",
-      "note": "Please freely exert your power,",
-      "warning": "but avoid blindly expanding translation versions."
-    },
-    "cta": {
-      "title": "Join us to drive change together",
-      "desc": "By filling out surveys and participating in the community, we collectively fight for students' rightful rights.",
-      "submit": "Fill out the questionnaire",
-      "contact": "Join us"
-    },
-    "footer": {
-      "text": "All rights reserved"
-    }
-  },
-  "metaTitle": "牛马ICU.",
-  "metaDescription": "This is a public welfare project initiated by the $Li Community and Teacher Li is Not Your Teacher. We hope to investigate and expose all the vicious practices of exploiting workers in China!",
-
+  "metaTitle": "Niuma ICU.",
+  "metaDescription": "This is a public welfare project initiated by the '$Li Community' and 'Teacher Li Is Not Your Teacher'. We aim to investigate and expose all forms of exploitation and abuse of workers in China!",
   "navigation": {
-    "submit": "Submit Data",
-    "display": "Display Data",
-    "charts": "Chart display",
-    "map": "Geographical distribution",
+    "submit": "Submit Content",
+    "display": "View Content",
+    "charts": "Charts",
+    "map": "Geographic Distribution",
     "contact": "Contact Us"
   },
   "theme": {
@@ -74,88 +14,214 @@
   },
   "language": {
     "en": "English",
-    "zh-CN": "简体中文",
-    "zh-TW": "繁體中文"
+    "zh-CN": "Simplified Chinese",
+    "zh-TW": "Traditional Chinese"
   },
   "site": {
-    "title": "牛马ICU",
-    "description": "A modern Next.js application with i18n and theme support"
+    "title": "Niuma ICU",
+    "description": "This is a public welfare project initiated by the '$Li Community' and 'Teacher Li Is Not Your Teacher'. We aim to investigate and expose all forms of exploitation and abuse of workers in China!"
   },
   "form": {
-    "title": "Overtime School Registration Questionnaire",
-    "description": "Please fill in the relevant information of the school completely to ensure that the registration information is accurate.",
-    "card": "We attach great importance to your privacy and data security. All information you submit will be kept strictly confidential and will only be used for academic research and data analysis. It will never be disclosed to any third party. Thank you for your trust and support.",
-    "safaKeyword": {
-      "label": "Safeword",
-      "description": "To prevent counterfeiting",
-      "placeholder": "Please enter a safe word"
-    },
+    "title": "CowHorse.ICU Overtime Work Blacklist",
+    "description": "Please fill in the relevant information about overtime work to ensure the registration data is accurate.",
+    "card": "We take your privacy and data security seriously. All information you submit will be kept strictly confidential and used solely for academic research and data analysis. It will never be shared with any third parties. Thank you for your trust and support.",
     "province": {
       "label": "Province",
-      "placeholder": "Select province",
-      "description": "Province where your school is located"
+      "description": "Please select your province.",
+      "placeholder": "Select province"
     },
     "city": {
       "label": "City",
-      "placeholder": "Enter city name",
-      "description": "City address"
+      "description": "Please select your city.",
+      "placeholder": "Select city"
     },
     "district": {
-      "label": "District",
-      "placeholder": "Enter district name",
-      "description": "District address"
+      "label": "District/County",
+      "description": "Please select your district or county.",
+      "placeholder": "Select district/county"
     },
-    "schoolName": {
-      "label": "School Name",
-      "placeholder": "Enter school name",
-      "description": "Name of your school"
-    },
-    "grade": {
-      "label": "Grade",
-      "placeholder": "Enter your grade",
-      "description": "Your current grade",
+    "gender": {
+      "label": "Gender",
+      "description": "Please select your gender.",
+      "placeholder": "Select",
       "options": {
-        "grade1": "Grade 1",
-        "grade2": "Grade 2",
-        "grade3": "Grade 3",
-        "grade4": "Grade 4",
-        "grade5": "Grade 5",
-        "grade6": "Grade 6",
-        "grade7": "Junior 1",
-        "grade8": "Junior 2",
-        "grade9": "Junior 3",
-        "grade10": "Senior 1",
-        "grade11": "Senior 2",
-        "grade12": "Senior 3"
+        "male": "Male",
+        "female": "Female",
+        "other": "Other / Prefer not to say"
       }
     },
-    "schoolStartTime": {
-      "label": "School Start Time",
-      "description": "For your regular school start time, click the clock button on the right for quick entry (AM = morning, PM = afternoon)."
+    "ageRange": {
+      "label": "Age Range",
+      "description": "Please select your age group.",
+      "placeholder": "Select",
+      "options": {
+        "under18": "Under 18",
+        "18_24": "18 - 24",
+        "25_34": "25 - 34",
+        "35_54": "35 - 54",
+        "55plus": "55+",
+        "undisclosed": "Prefer not to say"
+      }
     },
-    "schoolEndTime": {
-      "label": "School End Time",
-      "description": "Daily school time (including evening self-study), click the clock button on the right to quickly fill in (AM-morning/PM-afternoon)"
+    "occupation": {
+      "label": "Occupation Type",
+      "description": "Please select your occupation category.",
+      "placeholder": "Select",
+      "options": {
+        "delivery": "Delivery / Courier",
+        "labor": "Manual Laborer (Factory, Construction, etc.)",
+        "ride": "Ride-hailing / Chauffeur",
+        "truck": "Freight / Truck Driver"
+      }
     },
-    "weeklyStudyHours": {
-      "label": "Weekly Study Hours",
-      "placeholder": "Enter weekly study hours",
-      "description": "Note: Weekly hours, not daily!"
+    "companyName": {
+      "label": "Company Name",
+      "description": "Please enter the name of the company you work for.",
+      "placeholder": "e.g., ByteDance"
     },
-    "monthlyHolidays": {
-      "label": "Monthly Holiday Days",
-      "placeholder": "Enter monthly holiday days",
-      "description": "Number of holiday days per month"
+    "companySize": {
+      "label": "Company Size",
+      "description": "Please select the size of your company.",
+      "placeholder": "Select",
+      "options": {
+        "small": "Small (1 - 50 people)",
+        "medium": "Medium (51 - 500 people)",
+        "large": "Large (501+ people)",
+        "noEmployer": "No fixed employer (e.g., platform worker)"
+      }
     },
-    "suicideCases": {
-      "label": "Student Suicide Cases in 2024",
-      "placeholder": "Enter number",
-      "description": "Cases of students under extreme pressure"
+    "companyType": {
+      "label": "Company Type",
+      "description": "Please select the type of your company.",
+      "placeholder": "Select",
+      "options": {
+        "stateOwned": "State-Owned",
+        "foreign": "Foreign Enterprise",
+        "private": "Private Enterprise",
+        "platform": "Platform / Labor Dispatch",
+        "government": "Government"
+      }
     },
-    "studentComments": {
-      "label": "Student Comments",
-      "placeholder": "Enter your comments",
-      "description": "Share your thoughts about mental health pressure at your school"
+    "dailyWorkHours": {
+      "label": "Average Daily Working Hours",
+      "description": "Please select your typical daily working hours.",
+      "placeholder": "Select",
+      "options": {
+        "le8": "≤ 8 hours",
+        "8to12": "8 - 12 hours",
+        "ge12": "≥ 12 hours",
+        "flexible": "Flexible / Irregular"
+      }
+    },
+    "weeklyWorkDays": {
+      "label": "Average Weekly Working Days",
+      "description": "How many days do you usually work per week?",
+      "placeholder": "Select",
+      "options": {
+        "fiveOrLess": "5 or fewer days",
+        "six": "6 days",
+        "seven": "7 days"
+      }
+    },
+    "overtimePay": {
+      "label": "If you work overtime, is there compensation?",
+      "description": "Please select the method of overtime compensation, if any.",
+      "placeholder": "Select",
+      "options": {
+        "noOvertime": "No overtime",
+        "fullPay": "Full pay (1.5x standard wage)",
+        "partialPay": "Partial pay (less than legal 1.5x)",
+        "noPay": "Unpaid overtime",
+        "pieceRate": "Piecework / Hourly rate"
+      }
+    },
+    "negativeConsequence": {
+      "label": "Have you faced negative consequences for refusing or questioning overtime?",
+      "description": "E.g., performance pressure, criticism, pay cut, threat of dismissal.",
+      "placeholder": "Select",
+      "options": {
+        "yes": "Yes",
+        "no": "No",
+        "uncertain": "Not sure"
+      }
+    },
+    "longWorkIssues": {
+      "label": "What issues have you faced due to long working hours? (Multiple choice)",
+      "description": "You can select multiple or add other issues.",
+      "options": {
+        "health": "Physical health (e.g., back pain, vision problems)",
+        "mental": "Mental health (e.g., depression, anxiety, insomnia)",
+        "relationships": "Strained personal or family relationships",
+        "other": "Other"
+      },
+      "otherPlaceholder": "Please enter other issues"
+    },
+    "discriminationReasons": {
+      "label": "What forms of discrimination have you experienced? (Multiple choice)",
+      "description": "Select all that apply.",
+      "options": {
+        "gender": "Gender",
+        "age": "Age",
+        "marriage": "Marital / Parental status",
+        "identity": "Identity (e.g., region, education, ethnicity, sexuality)",
+        "other": "Other"
+      },
+      "otherPlaceholder": "Please describe other forms"
+    },
+    "violationsObserved": {
+      "label": "Does your company have any of the following illegal practices? (Multiple choice)",
+      "description": "Select all that apply.",
+      "options": {
+        "performanceDeduction": "Unjustified performance deductions",
+        "noSocialInsurance": "No social insurance or benefits",
+        "wageArrears": "Unpaid wages",
+        "noLaborContract": "No labor contract",
+        "belowMinimumWage": "Below legal minimum wage",
+        "noCompensation": "Fired without compensation",
+        "other": "Other"
+      },
+      "otherPlaceholder": "Please describe other issues"
+    },
+    "expectedChanges": {
+      "label": "What changes do you hope to see by exposing your company/unit? (Multiple choice)",
+      "description": "You can select multiple or provide additional input.",
+      "options": {
+        "shorterHours": "Shorter working hours (against 996 culture)",
+        "overtimePay": "Overtime pay",
+        "moreRestDays": "More rest days",
+        "holdCompanyAccountable": "Hold company accountable",
+        "other": "Other"
+      },
+      "otherPlaceholder": "Please describe other expectations"
+    },
+    "section1": {
+      "title": "1. Basic Information",
+      "description1": "We will ask about your basic background in the following questions.",
+      "description2": "⚠️ For sensitive questions or those that may reveal your identity, you may choose not to answer."
+    },
+    "section2": {
+      "title": "2. Current Work Situation",
+      "description1": "We will ask about your current work conditions in the following questions.",
+      "description2": "⚠️ For sensitive questions or those that may reveal your identity, you may choose not to answer."
+    },
+    "section3": {
+      "title": "3. Impacts and Demands Regarding Overtime",
+      "description1": "We will ask about the impact of overtime on you and your demands.",
+      "description2": "⚠️ For sensitive questions or those that may reveal your identity, you may choose not to answer."
+    },
+    "section4": {
+      "title": "4. Safe Word and Story Sharing",
+      "description1": "We will ask about the impact of overtime on you and your demands.",
+      "description2": "⚠️ For sensitive questions or those that may reveal your identity, you may choose not to answer."
+    },
+    "safaKeyword": {
+      "label": "Safe Word",
+      "placeholder": "Enter a safe word to delete your submission later",
+      "description": "You can provide a safe word here, which will serve as a password to delete your form in the future."
+    },
+    "storyComments": {
+      "label": "Comments, Experiences, or Stories (Some will be published anonymously)",
+      "placeholder": "Enter your comments here"
     },
     "submit": "Submit Survey",
     "submitting": "Submitting...",
@@ -163,92 +229,194 @@
     "error": "Error submitting survey. Please try again."
   },
   "display": {
-    "title": "Overtime School Registration Questionnaire",
-    "card": "All content is contributed by users and published after manual review. If you find any errors in the information, please contact us to correct or delete it.",
-    "viewDetails": "View Details",
-    "noData": "No Data Available",
-    "province": "Province",
-    "city": "City",
-    "district": "District",
-    "schoolName": "School Name",
-    "grade": "Grade",
-    "studentComments": "Student Comments",
-    "weeklyStudyHours": "Weekly Study Hours in School",
-    "monthlyHolidays": "Monthly Holiday Days",
-    "suicideCases": "2024 Student Suicide Cases",
-    "createdAt": "Submission Time",
-    "schoolStartTime": "School Start Time",
-    "schoolEndTime": "School End Time",
-    "location": "Geographical Location",
-    "schoolSchedule": "School Schedule",
-    "statistics": "Statistics",
-    "winterVacationDays": "Winter Vacation Days",
-    "winterTuitionTotal": "Winter Tuition Total Fee",
-    "pagination": {
-      "prev": "Previous Page",
-      "next": "Next Page",
-      "page": "Page {page}",
-      "of": "of {total} pages",
-      "showing": "Showing {start}-{end} items, total {total} items"
+    "loading": "Loading data, please wait...",
+    "card": {
+      "viewDetails": "View Details",
+      "detailTitle": "Detail Content"
     },
-    "filter": {
-      "placeholder": "Enter Filter Conditions",
-      "min": "Minimum Value",
-      "max": "Maximum Value",
-      "apply": "Apply Filter",
-      "clear": "Clear Filters"
+    "detail": {
+      "title": "Detailed Information"
+    },
+    "table": {
+      "title": "Overtime Work List",
+      "settings": {
+        "button": "Table Settings",
+        "title": "Table Field Settings",
+        "description": "Please select the fields you want to display in the table.",
+        "download": "Download Data"
+      },
+      "viewDetail": "View Details",
+      "empty": "No data available",
+      "all": "All",
+      "actions": "Actions",
+      "confirm": "Confirm",
+      "searchPlaceholder": "Please enter {{field}}",
+      "filterPlaceholder": "Enter keyword",
+      "fields": {
+        "companyName": "Company Name",
+        "companySize": "Company Size",
+        "companyType": "Company Type",
+        "ageRange": "Age Range",
+        "province": "Province",
+        "city": "City",
+        "occupation": "Occupation",
+        "dailyWorkHours": "Average Daily Working Hours",
+        "weeklyWorkDays": "Average Weekly Working Days",
+        "overtimePay": "Overtime Pay",
+        "negativeConsequence": "Negative consequences for refusing or questioning overtime",
+        "longWorkIssues": "Problems caused by long working hours",
+        "discriminationReasons": "Reasons for workplace discrimination",
+        "violationsObserved": "Illegal practices observed in company",
+        "expectedChanges": "Expected Changes",
+        "story": "Comments / Stories",
+        "gender": "Gender"
+      },
+
+      "pagination": {
+        "prev": "Previous",
+        "next": "Next",
+        "jump": "Go to",
+        "jumpPlaceholder": "Page number",
+        "pageIndicator": "Page {currentPage} / {totalPages}"
+      }
+    },
+    "pagination": {
+      "prev": "Previous",
+      "next": "Next",
+      "jump": "Go to",
+      "jumpPlaceholder": "Page number",
+      "pageIndicator": "Page {currentPage} / {totalPages}"
+    },
+    "search": {
+      "chevronUp": "Collapse Search",
+      "chevronDown": "Expand Search",
+      "btn": "Search",
+      "placeholder": "Please enter your company name"
     }
   },
   "charts": {
-    "title": "Data Statistics Charts",
-    "gradeDistribution": "Grade Distribution",
-    "weeklyStudyHoursDistribution": "Monthly Holidays Distribution",
-    "schoolStartTime": "School Start Time Distribution",
-    "schoolEndTime": "Distribution of school dismissal time (including evening self-study)",
-    "provinceDataDistribution": "Data distribution by province"
+    "dailyWorkData": "Average Daily Working Hours Distribution",
+    "weeklyWorkData": "Average Weekly Working Days Distribution",
+    "companySizeData": "Company Size Distribution",
+    "companyTypeData": "Company Type Distribution",
+    "overtimePayData": "Overtime Pay Distribution",
+    "negativeConsequenceData": "Negative Consequences for Refusing Overtime Distribution",
+    "genderData": "Gender Distribution",
+    "ageRangeData": "Age Range Distribution",
+    "provinceBar": {
+      "title": "Province Distribution",
+      "desc": "Displays the number of users distributed by province"
+    },
+    "occupationBar": {
+      "title": "Occupation Distribution",
+      "desc": "User count distribution by occupation"
+    },
+    "data": {
+      "label": "Unknown"
+    }
+  },
+  "contact": {
+    "title": "Join the $Li Community",
+    "join": {
+      "title": "Join the $Li Community",
+      "content": "We sincerely invite you to become a member of the <strong>$Li Community</strong>. This is a group dedicated to promoting democracy, freedom of speech, and press freedom in China. Join our <a>Telegram group</a> to connect with like-minded partners, share views, and work together to drive positive change."
+    },
+    "committee": {
+      "title": "Join the Preparatory Committee",
+      "intro": "Do you have innovative ideas or professional skills? We are forming a preparatory committee aimed at guiding the <strong>$Li Community</strong> towards a <strong>DDAO (Democratized Decentralized Autonomous Organization)</strong> model.",
+      "roles": {
+        "visionary": "<strong>Visionary with unique insights:</strong> Possesses DAO or innovative project concepts aligned with our values.",
+        "tech": "<strong>Technical Expert:</strong> Experience in front-end/back-end development; blockchain development, especially in Rust and Solana ecosystems.",
+        "design": "<strong>Creative Designer:</strong> Proficient in UI/UX, graphic design, or other creative fields.",
+        "rights": "<strong>Democracy and Human Rights Advocate:</strong> Experienced in democracy, human rights, and freedom of speech fields."
+      }
+    },
+    "why": {
+      "title": "Why Join?",
+      "mission": "Join hands with passionate like-minded partners.",
+      "freedom": "Participate in the great cause of promoting freedom, human rights, and democratic experimentation.",
+      "future": "Play a vital role in shaping the future blueprint of the $Li Community."
+    },
+    "how": {
+      "title": "How to Apply",
+      "intro": "You can contact us through the following ways:",
+      "telegram": "Click to join our Telegram group"
+    },
+    "foundation": {
+      "title": "Snowflake Foundation",
+      "name": "Teacher Li Is Not Your Teacher"
+    },
+    "jiang": {
+      "title": "Project Leader of 611 Study ICU - Jiang Bu",
+      "bio": "Jiang Bu — dissident, artist, situationist. Lives in Paris. Has made documentaries, worked as a film selector, driven a taxi, and been to the police station."
+    },
+    "tech": {
+      "title": "Technical Support - xROx"
+    }
+  },
+  "home": {
+    "hero": {
+      "title": "Your Situation Speaks Loudly",
+      "subtitle": "Niuma ICU | $Li",
+      "description": "This project is operated by the $Li community team. In an authoritarian environment, the $Li community is committed to defending human rights, press freedom, and freedom of speech. We build consensus and jointly promote these core values so that every worker can live with dignity.",
+      "buttonExpose": "Expose Sweatshop Companies Now",
+      "buttonView": "View Exposure List",
+      "tmp1": "This project is operated by",
+      "tmp2": "the $Li community team",
+      "tmp3": "In an authoritarian environment,",
+      "tmp4": "the $Li community",
+      "tmp5": "is committed to",
+      "tmp6": "defending human rights, press freedom, and freedom of speech.",
+      "tmp7": "We build consensus and jointly promote these core values so that every worker can",
+      "tmp8": "live with dignity."
+    },
+    "card1": {
+      "title": "Community Core Values",
+      "description": "$Li hopes to build a unique community that defends human rights, press freedom, and freedom of speech in an authoritarian environment like China. As the $Li community grows, we aim to build consensus and jointly promote these core values.",
+      "tmp1": "Hoping to build a unique community that defends human rights, press freedom, and freedom of speech in an authoritarian environment like China,",
+      "tmp2": "",
+      "tmp3": "As the",
+      "tmp4": "$Li community grows",
+      "tmp5": ", we aim to build consensus and jointly promote these core values."
+    },
+    "card2": {
+      "title": "\"Niuma ICU\" — Exposing Sweatshop Companies",
+      "description": "The latest project initiated by the Li community — <strong>\"Niuma ICU\"</strong> — aims to collect a list of companies with excessive overtime work nationwide, allowing the public to learn which companies exploit workers, and thereby pressure relevant authorities to fulfill their duties and <strong>improve the living conditions of Chinese laborers.</strong>",
+      "note": "If you or someone around you has experienced overtime work, unpaid overtime, or harsh working conditions, you can anonymously register the information of these companies to help more workers avoid these “sweatshops” and jointly promote social progress."
+    },
+    "solidarityCard": {
+      "title": "United for Change",
+      "description": "If labor departments and unions choose to turn a blind eye, then let us unite to <strong>force them to do their jobs</strong>. Every registration and exposure is a step towards putting pressure on exploitative companies and inactive institutions.",
+      "slogan": "Let the \"Niuma\" live like people, not machines!"
+    },
+    "backgroundCard": {
+      "title": "Project Initiation and Purpose",
+      "description": "<strong>Niuma ICU</strong> is a public welfare project initiated by the <strong>“$Li Community”</strong> and <strong>“Teacher Li Is Not Your Teacher”</strong>. We aim to investigate and expose all the exploitation and harsh treatment of workers in China!",
+      "slogan": "Reject 996! Reject endless overtime! Reject exploitation! Reject oppression! Reject all unequal treatment!"
+    },
+    "actionCard": {
+      "title": "Join Now and Take Action!",
+      "submit": {
+        "title": "Register Sweatshop Companies",
+        "desc": "Fill out the questionnaire and submit a list of companies with overtime work"
+      },
+      "view": {
+        "title": "View Sweatshop Company List",
+        "desc": "Learn which companies have overtime work issues"
+      },
+      "official": {
+        "title": "Visit Official Project Website",
+        "desc": "Get more information and follow the latest updates"
+      },
+      "backup": {
+        "title": "Backup English Domain",
+        "desc": "Use this link if you encounter access issues"
+      }
+    }
   },
   "map": {
     "title": "Page Under Construction",
     "description": "We’re working hard to build this page. Stay tuned!",
     "backHome": "Back to Home"
-  },
-  "contact": {
-  "title": "Join the $Li Community",
-  "join": {
-    "title": "Join the $Li Community",
-    "content": "We sincerely invite you to become a part of the <strong>$Li Community</strong>, a group dedicated to promoting democracy, freedom of speech, and press freedom in China. Join our <a>Telegram group</a> to connect with like-minded individuals, share ideas, and drive positive change together."
-  },
-  "committee": {
-    "title": "Join the Preparatory Committee",
-    "intro": "Do you have innovative ideas or professional skills? We are forming a preparatory committee to guide the <strong>$Li Community</strong> toward becoming a <strong>DDAO (Democratic Decentralized Autonomous Organization)</strong>.",
-    "roles": {
-      "visionary": "<strong>Visionaries with unique insights:</strong> Have ideas for DAOs or projects aligned with our values.",
-      "tech": "<strong>Technical Experts:</strong> Experience in front-end/back-end development; blockchain expertise, especially in Rust and the Solana ecosystem.",
-      "design": "<strong>Creative Designers:</strong> Skilled in UI/UX, graphic design, or other creative fields.",
-      "rights": "<strong>Advocates for Democracy and Human Rights:</strong> Experienced in promoting democracy, human rights, and free speech."
-    }
-  },
-  "why": {
-    "title": "Why Join?",
-    "mission": "Work alongside passionate and like-minded individuals.",
-    "freedom": "Be part of a great mission advancing freedom, human rights, and democratic experimentation.",
-    "future": "Play a key role in shaping the future vision of the $Li Community."
-  },
-  "how": {
-    "title": "How to Apply",
-    "intro": "You can reach out to us through the following ways:",
-    "telegram": "Click to join our Telegram group"
-  },
-  "foundation": {
-    "title": "Snowflake Foundation",
-    "name": "Li Laoshi is not your teacher"
-  },
-  "jiang": {
-    "title": "611 Study ICU Project Lead - Jiang Bu",
-    "bio": "Jiang Bu — dissident, artist, situationist. Lives in Paris. Has made documentaries, curated film selections, driven taxis, and been taken to the police station."
-  },
-  "tech": {
-    "title": "Tech Support - xROx"
   }
-}
 }

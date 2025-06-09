@@ -1,65 +1,6 @@
 {
-  "home": {
-    "intro": {
-      "part1": "本專案由 ",
-      "part2": " 營運，靈感源自 996.ICU，致力於為被壓榨的中國學生發聲。",
-      "part3": "$Li社群團隊"
-    },
-    "core": {
-      "title": "核心理念",
-      "part1": "希望建設一個 ",
-      "part2": "獨一無二的社區",
-      "part3": "，在中國這樣的極權環境中，",
-      "part4": "捍衛人權、新聞自由與言論自由",
-      "part5": "。 隨著 $LI 社區的壯大，我們希望凝聚共識，共同推動這些核心價值的實現。"
-    },
-    "system": {
-      "title": "什麼是 611 學制？",
-      "quote": "“611Study” 指的是“早6點上學，晚11點放學，生病 ICU”。這已成為中國中學的普遍現象。",
-      "text": "學生每週在校學習 ",
-      "highlight": "超過 102 小時",
-      "consequence": "，心理與身體健康遭受嚴重侵蝕。這一模式，",
-      "warning": "連監獄都不如",
-      "ending": "。"
-    },
-    "actions": {
-      "title": "我們能做什麼？",
-      "list": [
-        "填寫 ",
-        "超時學習學校登記問卷",
-        "，更新全國 ",
-        "恥辱名單",
-        "互助式向異地教育局、市長熱線舉報上榜學校",
-        "參與社區，提出新的議題與解決方案",
-        "下午6點鐘放學回家 🕕 —— 這是應有的權利"
-      ]
-    },
-    "vision": {
-      "title": "原則與願景",
-      "content": "611Study.ICU 是一場學生自下而上的吶喊，我們鼓勵來自不同地區、不同領域的人士加入討論。本社區提倡 ",
-      "highlight": "成熟、負責任、有建設性的發言",
-      "ending": "，共同探索解決之道。"
-    },
-    "inspiration": {
-      "title": "我們的靈感來源",
-      "thanks": "特別鳴謝 ",
-      "reference": "996.ICU",
-      "followup": " 的啟發與開源專案框架。我們將其精神延續到學生維權領域，為中國孩子爭取應有的成長環境。",
-      "note": "請自由發揮你的力量，",
-      "warning": "但無需盲目擴展翻譯版本"
-    },
-    "cta": {
-      "title": "加入我們，一起推動改變",
-      "desc": "透過填寫問卷、參與社區，我們共同為學生爭取應有的權利。",
-      "submit": "填寫問卷",
-      "contact": "加入我們"
-    },
-    "footer": {
-      "text": "版權所有"
-    }
-  },
-  "metaTitle": "牛马ICU.",
-  "metaDescription": "這是由 “$Li 社區”與“李老師不是你老師”發起的公益項目，我們希望調查曝光中國國內存在的一切剝削打工人的惡劣行為！",
+  "metaTitle": "牛馬ICU.",
+  "metaDescription": "這是由「$Li 社區」與「李老師不是你老師」發起的公益項目，我們希望調查曝光中國國內存在的一切剝削打工人的惡劣行為！",
   "navigation": {
     "submit": "內容提交",
     "display": "內容展示",
@@ -73,89 +14,214 @@
   },
   "language": {
     "en": "English",
-    "zh-CN": "简体中文",
+    "zh-CN": "簡體中文",
     "zh-TW": "繁體中文"
   },
   "site": {
-    "title": "牛马ICU.",
-    "description": "歡迎使用我們的現代化 Next.js 應用，支持國際化和主題切換。"
+    "title": "牛馬ICU",
+    "description": "這是由「$Li 社區」與「李老師不是你老師」發起的公益項目，我們希望調查曝光中國國內存在的一切剝削打工人的惡劣行為！"
   },
   "form": {
-    "title": "超時學習學校登記問卷",
-    "description": "請完整填寫學校的相關情況信息，確保登記資料準確無誤。",
-    "card": "我們高度重視您的隱私與資料安全。您提交的所有資訊將嚴格保密，僅用於學術研究與資料分析，絕不會洩露給任何第三方。感謝您的信任與支持。",
-    "safaKeyword": {
-      "label": "安全詞",
-      "description": "用於防止偽造",
-      "placeholder": "請輸入安全詞"
-    },
-
+    "title": "「牛馬.ICU」 超時工作黑名單",
+    "description": "請完整填寫超時工作的相關情況資訊，確保登記資料準確無誤。",
+    "card": "我們高度重視您的隱私與資料安全。您提交的所有資訊均將被嚴格保密，僅用於學術研究與資料分析，絕不會洩露給任何第三方。感謝您的信任與支持。",
     "province": {
       "label": "省份",
-      "placeholder": "請選擇省份",
-      "description": "所反映的學校所在省份"
+      "description": "請選擇您所在的省份。",
+      "placeholder": "請選擇省份"
     },
     "city": {
       "label": "城市",
-      "placeholder": "請輸入城市名稱",
-      "description": "城市地址"
+      "description": "請選擇您所在的城市。",
+      "placeholder": "請選擇城市"
     },
     "district": {
       "label": "區縣",
-      "placeholder": "請輸入區縣名稱",
-      "description": "區縣地址"
+      "description": "請選擇您所在的區或縣。",
+      "placeholder": "請選擇區縣"
     },
-    "schoolName": {
-      "label": "學校名稱",
-      "placeholder": "請輸入學校名稱",
-      "description": "學校名稱"
-    },
-    "grade": {
-      "label": "年級",
-      "placeholder": "請輸入您的年級",
-      "description": "您的年級",
+    "gender": {
+      "label": "性別",
+      "description": "請選擇您的性別。",
+      "placeholder": "請選擇",
       "options": {
-        "grade1": "一年級",
-        "grade2": "二年級",
-        "grade3": "三年級",
-        "grade4": "四年級",
-        "grade5": "五年級",
-        "grade6": "六年級",
-        "grade7": "國一",
-        "grade8": "國二",
-        "grade9": "國三",
-        "grade10": "高一",
-        "grade11": "高二",
-        "grade12": "高三"
+        "male": "男",
+        "female": "女",
+        "other": "其他性別／不願透露"
       }
     },
-    "schoolStartTime": {
-      "label": "上學時間",
-      "description": "日常上學時間，點擊右側時鐘按鈕可快速填寫（AM 表示上午，PM 表示下午）。"
+    "ageRange": {
+      "label": "年齡範圍",
+      "description": "請選擇您的年齡段。",
+      "placeholder": "請選擇",
+      "options": {
+        "under18": "18歲以下",
+        "18_24": "18 - 24",
+        "25_34": "25 - 34",
+        "35_54": "35 - 54",
+        "55plus": "55以上",
+        "undisclosed": "不願透露"
+      }
     },
-    "schoolEndTime": {
-      "label": "放學時間",
-      "description": "日常放學時間(含晚自習)，點選右側時鐘按鈕可快速填寫(AM-上午/PM-下午)"
+    "occupation": {
+      "label": "職業類別",
+      "description": "請選擇您的職業類別。",
+      "placeholder": "請選擇",
+      "options": {
+        "delivery": "外送員／快遞員",
+        "labor": "工人／體力勞動者（工廠、建築工地等）",
+        "ride": "網約車司機／代駕",
+        "truck": "貨運／卡車司機"
+      }
     },
-    "weeklyStudyHours": {
-      "label": "每週在校學習小時數",
-      "placeholder": "請輸入每週學習小時數",
-      "description": "請注意是每週！不是每天"
+    "companyName": {
+      "label": "公司名稱",
+      "description": "請填寫您所在公司的名稱。",
+      "placeholder": "例如：字節跳動"
     },
-    "monthlyHolidays": {
-      "label": "每月假期天數",
-      "placeholder": "請輸入每月假期天數",
-      "description": "每月放假的天數"
+    "companySize": {
+      "label": "公司規模",
+      "description": "請選擇您所在公司的人員規模。",
+      "placeholder": "請選擇",
+      "options": {
+        "small": "小型（1 - 50人）",
+        "medium": "中型（51 - 500人）",
+        "large": "大型（501人以上）",
+        "noEmployer": "無固定雇主（如平台工作者）"
+      }
     },
-    "suicideCases": {
-      "label": "2024年學生自殺數",
-      "placeholder": "請輸入數字",
-      "description": "您的學校是否有學生心理壓力過大甚至選擇輕生的情況"
+    "companyType": {
+      "label": "公司性質",
+      "description": "請選擇您所在公司的性質。",
+      "placeholder": "請選擇",
+      "options": {
+        "stateOwned": "國企",
+        "foreign": "外企",
+        "private": "私企",
+        "platform": "平台／勞務派遣",
+        "government": "政府"
+      }
     },
-    "studentComments": {
-      "label": "學生評論",
-      "placeholder": "請輸入您的評論",
-      "description": "請分享您的真實看法"
+    "dailyWorkHours": {
+      "label": "平均每日工作時長",
+      "description": "請選擇您通常每天的工作時長。",
+      "placeholder": "請選擇",
+      "options": {
+        "le8": "小於等於 8 小時",
+        "8to12": "8 - 12 小時",
+        "ge12": "大於等於 12 小時",
+        "flexible": "彈性／不定時"
+      }
+    },
+    "weeklyWorkDays": {
+      "label": "平均每週工作天數",
+      "description": "您通常每週工作幾天？",
+      "placeholder": "請選擇",
+      "options": {
+        "fiveOrLess": "五天或小於五天",
+        "six": "六天",
+        "seven": "七天"
+      }
+    },
+    "overtimePay": {
+      "label": "如果您需要加班，是否有加班報酬？",
+      "description": "可根據實際情況選擇加班補償方式。",
+      "placeholder": "請選擇",
+      "options": {
+        "noOvertime": "不加班",
+        "fullPay": "全額支付（1.5倍正常工資）",
+        "partialPay": "部分支付（不足法定1.5倍工資）",
+        "noPay": "無償加班",
+        "pieceRate": "按件／按時計費"
+      }
+    },
+    "negativeConsequence": {
+      "label": "是否因拒絕加班或質疑工作安排而面臨負面後果？",
+      "description": "如考核任務壓力、批評、降薪、解雇威脅等。",
+      "placeholder": "請選擇",
+      "options": {
+        "yes": "是",
+        "no": "否",
+        "uncertain": "不確定"
+      }
+    },
+    "longWorkIssues": {
+      "label": "您因「長時間工作」出現過哪些問題？（可多選）",
+      "description": "可選擇多個選項，或補充填寫其他問題。",
+      "options": {
+        "health": "身體健康（如腰痛、視力下降）",
+        "mental": "心理壓力（如憂鬱、焦慮、失眠）",
+        "relationships": "人際或家庭關係緊張",
+        "other": "其他"
+      },
+      "otherPlaceholder": "請輸入其他問題"
+    },
+    "discriminationReasons": {
+      "label": "遭受過哪些歧視？（可多選）",
+      "description": "勾選您認為存在的問題，可多選",
+      "options": {
+        "gender": "性別",
+        "age": "年齡",
+        "marriage": "生育／婚姻",
+        "identity": "身分（如地域、學歷、民族、性向等）",
+        "other": "其他"
+      },
+      "otherPlaceholder": "請補充其他說明"
+    },
+    "violationsObserved": {
+      "label": "您的企業是否存在以下「違法違規現象」？（可多選）",
+      "description": "勾選您認為存在的問題，可多選",
+      "options": {
+        "performanceDeduction": "胡亂扣除績效",
+        "noSocialInsurance": "不繳納五險一金或社保",
+        "wageArrears": "拖欠工資",
+        "noLaborContract": "不簽訂勞動合同",
+        "belowMinimumWage": "低於法定最低工資",
+        "noCompensation": "開除不給補償",
+        "other": "其他"
+      },
+      "otherPlaceholder": "請補充其他說明"
+    },
+    "expectedChanges": {
+      "label": "您希望透過曝光您的公司／單位得到哪些改變？（可多選）",
+      "description": "可選擇多個選項，或補充填寫其他問題。",
+      "options": {
+        "shorterHours": "縮短工時（反996）",
+        "overtimePay": "支付加班費",
+        "moreRestDays": "增加休息日",
+        "holdCompanyAccountable": "追究企業責任",
+        "other": "其他"
+      },
+      "otherPlaceholder": "請補充其他說明"
+    },
+    "section1": {
+      "title": "一、基本資訊",
+      "description1": "我們會在以下問題詢問關於您的基本資訊。",
+      "description2": "⚠️ 對於敏感或者容易暴露您身分的問題，您可以選擇不透露"
+    },
+    "section2": {
+      "title": "二、工作現況",
+      "description1": "我們會在以下問題中詢問關於您的工作現況",
+      "description2": "⚠️ 對於敏感或者容易暴露您身分的問題，您可以選擇不透露"
+    },
+    "section3": {
+      "title": "三、超時工作的影響與訴求",
+      "description1": "我們會在以下問題中詢問關於您超時工作的影響與您的訴求",
+      "description2": "⚠️ 對於敏感或者容易暴露您身分的問題，您可以選擇不透露"
+    },
+    "section4": {
+      "title": "四、安全詞與故事分享",
+      "description1": "我們會在以下問題中詢問關於您超時工作的影響與您的訴求",
+      "description2": "⚠️ 對於敏感或者容易暴露您身分的問題，您可以選擇不透露"
+    },
+    "safaKeyword": {
+      "label": "安全詞",
+      "placeholder": "請輸入安全詞，作為刪除問卷的密碼",
+      "description": "您可以在這裡填寫一個安全詞，作為未來可能刪除問卷的密碼。"
+    },
+    "storyComments": {
+      "label": "評論、經歷與故事（我們會選取一些評論單獨發布）",
+      "placeholder": "請輸入您的評論"
     },
     "submit": "提交調查",
     "submitting": "提交中...",
@@ -163,64 +229,122 @@
     "error": "提交失敗，請重試。"
   },
   "display": {
-    "title": "超時學習學校登記問卷",
-    "card": "所有內容均來自用戶投稿，並經人工審核後發布。如您發現資訊有誤，歡迎聯絡我們進行更正或刪除。",
-    "viewDetails": "查看詳情",
-    "noData": "暫無數據",
-    "province": "省份",
-    "city": "城市",
-    "district": "區縣",
-    "schoolName": "學校名稱",
-    "grade": "年級",
-    "studentComments": "學生評論",
-    "weeklyStudyHours": "每週在校學習小時數",
-    "monthlyHolidays": "每月假期天數",
-    "suicideCases": "2024年學生自殺數",
-    "createdAt": "提交時間",
-    "schoolStartTime": "上學時間",
-    "schoolEndTime": "放學時間",
-    "location": "地理位置",
-    "schoolSchedule": "作息時間",
-    "statistics": "統計數據",
-    "winterVacationDays": "寒假放假天數",
-    "winterTuitionTotal": "寒假補課收費總額",
+    "loading": "正在加載數據，請稍候...",
+    "card": {
+      "viewDetails": "查看詳情",
+      "detailTitle": "詳細內容"
+    },
+    "detail": {
+        "title": "詳細資訊"
+      },
+    "fields": {
+        "companyName": "公司名稱",
+        "companySize": "公司規模",
+        "companyType": "公司性質",
+        "ageRange": "年齡範圍",
+        "province": "省份",
+        "city": "城市",
+        "occupation": "職業",
+        "dailyWorkHours": "平均每日工時",
+        "weeklyWorkDays": "平均每週工作天數",
+        "overtimePay": "加班報酬",
+        "negativeConsequence": "是否因拒絕加班或質疑工作安排而面臨負面後果",
+        "longWorkIssues": "長時間工作造成的問題",
+        "discriminationReasons": "職場歧視原因",
+        "violationsObserved": "公司存在的違法違規現象",
+        "expectedChanges": "期望得到的改變",
+        "story": "評論／故事",
+        "gender": "性別"
+      },
+    "table": {
+      "title": "超時工作名單",
+      "settings": {
+        "button": "表格設定",
+        "title": "表格欄位設定",
+        "description": "請選擇你希望在表格中顯示的欄位。",
+        "download": "下載資料"
+      },
+      "searchPlaceholder": "請輸入{{field}}",
+      "viewDetail": "查看詳情",
+      "empty": "暫無資料",
+      "all": "全部",
+      "actions": "操作",
+      "confirm": "確認",
+      "filterPlaceholder": "請輸入關鍵字",
+      "fields": {
+        "companyName": "公司名稱",
+        "companySize": "公司規模",
+        "companyType": "公司性質",
+        "ageRange": "年齡範圍",
+        "province": "省份",
+        "city": "城市",
+        "occupation": "職業",
+        "dailyWorkHours": "平均每日工時",
+        "weeklyWorkDays": "平均每週工作天數",
+        "overtimePay": "加班報酬",
+        "negativeConsequence": "是否因拒絕加班或質疑工作安排而面臨負面後果",
+        "longWorkIssues": "長時間工作造成的問題",
+        "discriminationReasons": "職場歧視原因",
+        "violationsObserved": "公司存在的違法違規現象",
+        "expectedChanges": "期望得到的改變",
+        "story": "評論／故事",
+        "gender": "性別"
+      },
+      "detail": {
+        "title": "詳細資訊"
+      },
+      "pagination": {
+        "prev": "上一頁",
+        "next": "下一頁",
+        "jump": "跳轉",
+        "jumpPlaceholder": "頁碼",
+        "pageIndicator": "第 {currentPage} 頁 / 共 {totalPages} 頁"
+      }
+    },
     "pagination": {
       "prev": "上一頁",
       "next": "下一頁",
-      "page": "第 {page} 頁",
-      "of": "共 {total} 頁",
-      "showing": "顯示 {start}-{end} 條，共 {total} 條"
+      "jump": "跳轉",
+      "jumpPlaceholder": "頁碼",
+      "pageIndicator": "第 {currentPage} 頁 / 共 {totalPages} 頁"
     },
-    "filter": {
-      "placeholder": "輸入篩選條件",
-      "min": "最小值",
-      "max": "最大值",
-      "apply": "應用篩選",
-      "clear": "清除篩選"
+    "search": {
+      "chevronUp": "收起搜尋",
+      "chevronDown": "展開搜尋",
+      "btn": "搜尋",
+      "placeholder": "請輸入企業名稱"
     }
   },
-  "map": {
-    "title": "內容正在建置中",
-    "description": "我們正在努力完善此頁面內容，敬請期待。",
-    "backHome": "回首頁"
-  },
   "charts": {
-    "title": "數據統計圖表",
-    "gradeDistribution": "年級分佈",
-    "weeklyStudyHoursDistribution": "每週學習小時數分佈",
-    "schoolStartTime": "上學時間分佈",
-    "schoolEndTime": "放學時間分佈（含晚自習）",
-    "provinceDataDistribution": "各省數據分佈"
+    "dailyWorkData": "平均每日工作時長分布",
+    "weeklyWorkData": "平均每週工作天數分布",
+    "companySizeData": "公司規模分布",
+    "companyTypeData": "公司性質分布",
+    "overtimePayData": "加班報酬分布",
+    "negativeConsequenceData": "拒絕加班面臨負面後果分布",
+    "genderData": "性別分布",
+    "ageRangeData": "年齡範圍分布",
+    "provinceBar": {
+      "title": "省份分布",
+      "desc": "顯示各省份用戶數量分布"
+    },
+    "occupationBar": {
+      "title": "職業分布",
+      "desc": "各職業對應的用戶數量分布情況"
+    },
+    "data": {
+      "label": "未知"
+    }
   },
   "contact": {
-    "title": "加入 $Li 社區",
+    "title": "加入 $Li 社群",
     "join": {
-      "title": "加入 $Li 社區",
-      "content": "我們誠摯邀請您成為 <strong>$Li 社區</strong> 的一員。這是一個致力於推動中國民主、言論自由和新聞自由的團體。加入我們的 <a>Telegram 群組</a>，與志同道合的夥伴交流，分享觀點，共同推動積極變革。"
+      "title": "加入 $Li 社群",
+      "content": "我們誠摯邀請您成為 <strong>$Li 社群</strong> 的一員。這是一個致力於推動中國民主、言論自由和新聞自由的團體。加入我們的 <a>Telegram 群組</a>，與志同道合的夥伴交流，分享觀點，共同推動積極變革。"
     },
     "committee": {
       "title": "加入籌備委員會",
-      "intro": "您是否擁有創新想法或專業技能？我們正在組建籌備委員會，旨在引領 <strong>$Li 社區</strong> 向 <strong>DDAO（民主化去中心化自治組織）</strong> 方向發展。",
+      "intro": "您是否擁有創新想法或專業技能？我們正在組建籌備委員會，旨在引領 <strong>$Li 社群</strong> 向 <strong>DDAO（民主化去中心化自治組織）</strong> 方向發展。",
       "roles": {
         "visionary": "<strong>獨到見解的願景者：</strong> 擁有與我們價值觀契合的 DAO 或創新項目理念。",
         "tech": "<strong>技術專家：</strong> 前端/後端開發經驗；區塊鏈開發，尤其是 Rust 和 Solana 生態。",
@@ -230,13 +354,13 @@
     },
     "why": {
       "title": "為什麼加入？",
-      "mission": "與志同道合且充滿熱情的夥伴攜手前進。",
+      "mission": "與志同道合且充滿熱情的夥伴攜手共進。",
       "freedom": "參與推動自由、人權及民主實驗的偉大事業。",
-      "future": "在塑造 $Li 社區未來藍圖中發揮重要作用。"
+      "future": "在塑造 $Li 社群未來藍圖中發揮重要作用。"
     },
     "how": {
       "title": "如何申請",
-      "intro": "您可以透過以下方式與我們取得聯繫：",
+      "intro": "您可以通過以下方式與我們取得聯繫：",
       "telegram": "點擊加入我們的 Telegram 群組"
     },
     "foundation": {
@@ -244,11 +368,76 @@
       "name": "李老師不是你老師"
     },
     "jiang": {
-      "title": "611 Study ICU 專案負責人 - 蔣不",
-      "bio": "蔣不 —— 反賊，藝術家，情境主義者。生活在巴黎。拍過紀錄片，當過選片人，開過計程車，進過派出所。"
+      "title": "611 Study ICU項目負責人-蔣不",
+      "bio": "蔣不 — 反賊，藝術家，情境主義者。生活在巴黎。拍過紀錄片，當過選片人，開過出租車，進過派出所。"
     },
     "tech": {
-      "title": "技術支援 - xROx"
+      "title": "技術支持 - xROx"
     }
+  },
+  "home": {
+    "hero": {
+      "title": "你的境遇，掷地有聲",
+      "subtitle": "牛馬ICU | $Li",
+      "description": "本專案由 $Li社群團隊 運營，在極權環境中，$LI 社群致力於捍衛人權、新聞自由與言論自由。我們凝聚共識，共同推動這些核心價值的實現，讓每一位勞動者都能活得有尊嚴。",
+      "buttonExpose": "立即曝光血汗公司",
+      "buttonView": "查看曝光名單",
+      "tmp1": "本專案由",
+      "tmp2": "$Li社群團隊",
+      "tmp3": "運營，在極權環境中，",
+      "tmp4": "$LI 社群",
+      "tmp5": "致力於",
+      "tmp6": "捍衛人權、新聞自由與言論自由。",
+      "tmp7": "我們凝聚共識，共同推動這些核心價值的實現，讓每一位勞動者都能",
+      "tmp8": "活得有尊嚴。"
+    },
+    "card1": {
+      "title": "社群核心理念",
+      "description": "$LI 希望建設一個獨一無二的社群，在中國這樣的極權環境中，捍衛人權、新聞自由與言論自由。隨著 $LI 社群的壯大，我們希望凝聚共識，共同推動這些核心價值的實現。",
+      "tmp1": "希望建設一個獨一無二的社群，在中國這樣的極權環境中，",
+      "tmp2": "捍衛人權、新聞自由與言論自由。",
+      "tmp3": "隨著",
+      "tmp4": "$LI 社群的壯大",
+      "tmp5": "，我們希望凝聚共識，共同推動這些核心價值的實現。"
+    },
+    "card2": {
+      "title": "「牛馬 ICU」——曝光血汗公司",
+      "description": "Li 社群最新發起的專案——<strong>「牛馬 ICU」</strong>，旨在收集全國超時工作公司的名單，讓公眾了解哪些企業在壓榨勞動者，並以此向相關部門施壓，敦促他們履行職責，<strong>改善中國勞工的生存環境。</strong>",
+      "note": "如果你或你身邊的人曾遭遇過超時工作、無償加班、惡劣的工作條件，你可以匿名登記這些公司的信息，幫助更多的勞動者規避這些「血汗工廠」，並共同推動社會進步。"
+    },
+    "solidarityCard": {
+      "title": "團結一致，推動變革",
+      "description": "如果勞動部門和工會選擇視而不見，那就讓我們團結一致，<strong>逼迫他們完成本職工作</strong>。每一份登記、每一次曝光，都是向血汗企業和不作為的機構施加壓力的一步。",
+      "slogan": "讓「牛馬」活得像人，而不是機器！"
+    },
+    "backgroundCard": {
+      "title": "專案發起與宗旨",
+      "description": "<strong>牛馬ICU</strong> 是由 <strong>「$Li 社群」</strong>與 <strong>「李老師不是你老師」</strong> 發起的公益專案，我們希望調查曝光中國國內存在的一切剝削打工人的惡劣行為！",
+      "slogan": "拒絕996！拒絕無休止加班！拒絕剝削！拒絕壓榨！拒絕壓迫！拒絕一切不平等的待遇！"
+    },
+    "actionCard": {
+      "title": "立即參與，共同行動！",
+      "submit": {
+        "title": "登記血汗公司",
+        "desc": "填寫問卷，提交超時工作企業名單"
+      },
+      "view": {
+        "title": "查看血汗公司名單",
+        "desc": "了解哪些企業存在超時工作問題"
+      },
+      "official": {
+        "title": "訪問專案官網",
+        "desc": "獲取更多資訊，關注最新動態"
+      },
+      "backup": {
+        "title": "備用英文域名",
+        "desc": "如遇訪問障礙，請使用此連結"
+      }
+    }
+  },
+  "map": {
+    "title": "內容正在建置中",
+    "description": "我們正在努力完善此頁面內容，敬請期待。",
+    "backHome": "回首頁"
   }
 }

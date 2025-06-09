@@ -1,5 +1,5 @@
 "use client";
-
+import { useTranslations } from "next-intl";
 import { useEffect, useState } from "react";
 import {
   ResponsiveContainer,
@@ -13,9 +13,11 @@ import {
   Bar,
   YAxis,
   CartesianGrid,
-  
 } from "recharts";
-import { ValueType, NameType } from "recharts/types/component/DefaultTooltipContent";
+import {
+  ValueType,
+  NameType,
+} from "recharts/types/component/DefaultTooltipContent";
 import { TooltipProps } from "recharts";
 
 const COLORS = [
@@ -124,6 +126,7 @@ function ChartCard({ title, data }: { title: string; data: ChartData[] }) {
 }
 
 export default function ChartsPage() {
+  const t = useTranslations("charts");
   // const [activeIndex, setActiveIndex] = useState(null);
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
   const [dailyWorkData, setDailyWorkData] = useState<ChartData[]>([]);
@@ -186,14 +189,14 @@ export default function ChartsPage() {
 
   return (
     <section className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-[1800px] mx-auto">
-      <ChartCard title="平均每日工作时长分布" data={dailyWorkData} />
-      <ChartCard title="平均每周工作天数分布" data={weeklyWorkData} />
-      <ChartCard title="公司规模分布" data={companySizeData} />
-      <ChartCard title="公司性质分布" data={companyTypeData} />
+      <ChartCard title={t("dailyWorkData")} data={dailyWorkData} />
+      <ChartCard title={t("weeklyWorkData")} data={weeklyWorkData} />
+      <ChartCard title={t("companySizeData")} data={companySizeData} />
+      <ChartCard title={t("companyTypeData")} data={companyTypeData} />
       <div className="rounded-2xl shadow-md p-6 bg-card text-foreground col-span-1 md:col-span-2">
-        <h2 className="text-xl font-semibold mb-1">省份分布</h2>
+        <h2 className="text-xl font-semibold mb-1">{t("provinceBar.title")}</h2>
         <p className="text-sm text-muted-foreground mb-4">
-          显示各省份用户数量分布
+          {t("provinceBar.desc")}
         </p>
         <div className="w-full h-[400px] min-w-[320px] overflow-x-auto pb-4">
           <ResponsiveContainer width={chartDynamicWidth} height="100%">
@@ -255,16 +258,19 @@ export default function ChartsPage() {
           </ResponsiveContainer>
         </div>
       </div>
-      <ChartCard title="加班报酬分布" data={overtimePayData} />
-      <ChartCard title="拒绝加班负面后果分布" data={negativeConsequenceData} />
-      <ChartCard title="性别分布" data={genderData} />
-      <ChartCard title="年龄范围分布" data={ageRangeData} />
+      <ChartCard title={t("overtimePayData")} data={overtimePayData} />
+      <ChartCard
+        title={t("negativeConsequenceData")}
+        data={negativeConsequenceData}
+      />
+      <ChartCard title={t("genderData")} data={genderData} />
+      <ChartCard title={t("ageRangeData")} data={ageRangeData} />
       <div className="rounded-2xl shadow-md p-6 bg-card text-foreground col-span-1 md:col-span-2 mb-6">
-        <h2 className="text-xl font-semibold mb-2">职业分布</h2>
+        <h2 className="text-xl font-semibold mb-2">{t("occupationBar.title")}</h2>
         <p className="text-sm text-muted-foreground mb-4">
-          各职业对应的用户数量分布情况
+          {t("occupationBar.desc")}
         </p>
-    
+
         <div className="w-full h-[400px] min-w-[320px] overflow-x-auto pb-4">
           <ResponsiveContainer width={chartDynamicWidth} height="100%">
             <BarChart
