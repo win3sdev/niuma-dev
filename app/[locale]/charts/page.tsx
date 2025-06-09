@@ -21,13 +21,13 @@ import {
 import { TooltipProps } from "recharts";
 
 const COLORS = [
-  "#5F7379", // 沉静蓝灰 (Muted Blue-Gray) - Deep, calming base
-  "#8C9D9A", // 柔和灰绿 (Soft Gray-Green) - A soothing natural tone
-  "#BDBDA3", // 浅米灰 (Light Beige-Gray) - A warm, neutral anchor
-  "#A2A69A", // 灰绿色 (Grayish Green) - Earthy and understated
-  "#7B8B8F", // 中性蓝灰 (Neutral Blue-Gray) - A balanced mid-tone
-  "#D9CAB3", // 淡沙色 (Pale Sand) - A very light, warm neutral
-  "#748C8A", // 深灰绿 (Dark Gray-Green) - Provides depth and contrast
+  "#5F7379",
+  "#8C9D9A",
+  "#BDBDA3",
+  "#A2A69A",
+  "#7B8B8F",
+  "#D9CAB3",
+  "#748C8A",
 ];
 
 type ChartData = { name: string; value: number };
@@ -127,7 +127,6 @@ function ChartCard({ title, data }: { title: string; data: ChartData[] }) {
 
 export default function ChartsPage() {
   const t = useTranslations("charts");
-  // const [activeIndex, setActiveIndex] = useState(null);
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
   const [dailyWorkData, setDailyWorkData] = useState<ChartData[]>([]);
   const [weeklyWorkData, setWeeklyWorkData] = useState<ChartData[]>([]);
@@ -142,8 +141,8 @@ export default function ChartsPage() {
   const [ageRangeData, setAgeRangeData] = useState<ChartData[]>([]);
   const [occupationData, setOccupationData] = useState<ChartData[]>([]);
 
-  const primaryBarColor = "#8C9D9A"; // 柔和灰绿 for main bars
-  const hoverBarColor = "#7B8B8F"; // 中性蓝灰 for hover effect
+  const primaryBarColor = "#8C9D9A";
+  const hoverBarColor = "#7B8B8F";
 
   const minBarWidthPerItem = 60;
 
@@ -266,7 +265,9 @@ export default function ChartsPage() {
       <ChartCard title={t("genderData")} data={genderData} />
       <ChartCard title={t("ageRangeData")} data={ageRangeData} />
       <div className="rounded-2xl shadow-md p-6 bg-card text-foreground col-span-1 md:col-span-2 mb-6">
-        <h2 className="text-xl font-semibold mb-2">{t("occupationBar.title")}</h2>
+        <h2 className="text-xl font-semibold mb-2">
+          {t("occupationBar.title")}
+        </h2>
         <p className="text-sm text-muted-foreground mb-4">
           {t("occupationBar.desc")}
         </p>

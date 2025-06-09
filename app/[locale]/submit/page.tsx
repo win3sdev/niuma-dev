@@ -8,7 +8,7 @@ import { useEffect } from "react";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import regionData from "@/data/regionData"; // 地区数据
+import regionData from "@/data/regionData";
 
 export default function SubmitPage() {
   const mouseDataRef = useRef<string[]>([]);
@@ -174,14 +174,6 @@ export default function SubmitPage() {
     }
   };
 
-  // const handleChange = (
-  //   e: React.ChangeEvent<
-  //     HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
-  //   >
-  // ) => {
-  //   const { name, value } = e.target;
-  //   setFormData((prev) => ({ ...prev, [name]: value }));
-  // };
 
   type FormChangeEvent =
     | React.ChangeEvent<

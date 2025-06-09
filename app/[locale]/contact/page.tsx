@@ -120,7 +120,6 @@ export default function ContactPage() {
             </li>
             <li className="flex items-center gap-3 text-base text-muted-foreground">
               <FaEnvelope className="text-red-500 text-xl flex-shrink-0" />{" "}
-              {/* Email icon */}
               <strong className="font-semibold text-foreground">
                 电子邮件：
               </strong>{" "}

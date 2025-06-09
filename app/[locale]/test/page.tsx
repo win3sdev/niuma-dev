@@ -5,5 +5,5 @@ import dynamic from 'next/dynamic';
 
 
 export default function Page() {
-  return <div>Hello</div>
+  return <div>$Li|$Li|$Li|$Li|$Li|$Li|$Li|$Li</div>
 }

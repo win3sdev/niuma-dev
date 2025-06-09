@@ -5,8 +5,6 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import CustomDialog from "@/components/ui/CustomDialog";
-import { Skeleton } from "@/components/ui/skeleton";
 import { useTranslations } from "next-intl";
 import {
   Dialog,
@@ -15,7 +13,6 @@ import {
   DialogTitle,
   DialogClose,
 } from "@/components/ui/dialog";
-import { Info } from "lucide-react";
 import {
   Download,
   Settings,
@@ -23,11 +20,10 @@ import {
   ChevronUp,
   ChevronDown,
   Building2,
-  MapPin,
   Briefcase,
-  Calendar,
   Layers,
   Users,
+  Info
 } from "lucide-react";
 import axios from "axios";
 import { motion } from "framer-motion";
