@@ -64,14 +64,23 @@
       }
     },
     "occupation": {
-      "label": "Occupation Type",
+      "label": "Occupation Category",
       "description": "Please select your occupation category.",
-      "placeholder": "Select",
+      "placeholder": "Please select",
       "options": {
-        "delivery": "Delivery / Courier",
-        "labor": "Manual Laborer (Factory, Construction, etc.)",
-        "ride": "Ride-hailing / Chauffeur",
-        "truck": "Freight / Truck Driver"
+        "delivery": "Delivery/Courier",
+        "labor": "Laborer/Manual Worker (e.g., factory, construction site)",
+        "ride": "Ride-hailing/Driver-for-hire",
+        "truck": "Freight/Truck Driver",
+        "tech": "Tech Industry Worker",
+        "nonOfficial": "Non-staff Public Worker (e.g., auxiliary police, contract worker, private school teacher)",
+        "official": "Official Public Worker (e.g., government staff, civil servant, public school teacher)",
+        "finance": "Finance/Banking/Law",
+        "healthcare": "Healthcare (doctor, nurse, pharmacist, health consultant, etc.)",
+        "education": "Education/Training (e.g., tutoring center teacher; public school teachers please choose official)",
+        "service": "Service Industry (real estate, sales, insurance, waiter, tourism, etc.)",
+        "freelancer": "Freelancer (writer, photographer, designer)",
+        "unstable": "Unable to find stable long-term work"
       }
     },
     "companyName": {

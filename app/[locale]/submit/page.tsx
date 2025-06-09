@@ -437,7 +437,7 @@ export default function SubmitPage() {
                 <option value="外卖员/快递员">
                   {t("occupation.options.delivery")}
                 </option>
-                <option value="工人/体力劳动者">
+                <option value="工人/体力劳动者（工厂、建筑工地等）">
                   {t("occupation.options.labor")}
                 </option>
                 <option value="网约车司机/代驾">
@@ -445,6 +445,33 @@ export default function SubmitPage() {
                 </option>
                 <option value="货运/卡车司机">
                   {t("occupation.options.truck")}
+                </option>
+                <option value="互联网相关从业者">
+                  {t("occupation.options.tech")}
+                </option>
+                <option value="无编制公职人员（如辅警，企事业单位合同工，劳务派遣岗位，私立学校教师）">
+                  {t("occupation.options.nonOfficial")}
+                </option>
+                <option value="有编制公职人员（包括政府/公务员/事业单位，教师，有编制公务员）">
+                  {t("occupation.options.official")}
+                </option>
+                <option value="金融/银行/法律">
+                  {t("occupation.options.finance")}
+                </option>
+                <option value="医药健康（医生、护士、药师、健康顾问等）">
+                  {t("occupation.options.healthcare")}
+                </option>
+                <option value="教育/培训（如辅导班老师，学校教师请填公职人员）">
+                  {t("occupation.options.education")}
+                </option>
+                <option value="服务业（中介/销售/保险/服务员/旅游业等）">
+                  {t("occupation.options.service")}
+                </option>
+                <option value="自由职业（作家、摄影师、设计师）">
+                  {t("occupation.options.freelancer")}
+                </option>
+                <option value="无法找到长期固定工作">
+                  {t("occupation.options.unstable")}
                 </option>
               </select>
             </div>

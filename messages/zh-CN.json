@@ -131,7 +131,16 @@
         "delivery": "外卖员/快递员",
         "labor": "工人/体力劳动者（工厂、建筑工地等）",
         "ride": "网约车司机/代驾",
-        "truck": "货运/卡车司机"
+        "truck": "货运/卡车司机",
+        "tech": "互联网相关从业者",
+        "nonOfficial": "无编制公职人员（如辅警，企事业单位合同工，劳务派遣岗位，私立学校教师）",
+        "official": "有编制公职人员（包括政府/公务员/事业单位，教师，有编制公务员）",
+        "finance": "金融/银行/法律",
+        "healthcare": "医药健康（医生、护士、药师、健康顾问等）",
+        "education": "教育/培训（如辅导班老师，学校教师请填公职人员）",
+        "service": "服务业（中介/销售/保险/服务员/旅游业等）",
+        "freelancer": "自由职业（作家、摄影师、设计师）",
+        "unstable": "无法找到长期固定工作"
       }
     },
     "companyName": {
@@ -366,7 +375,7 @@
       "jumpPlaceholder": "页码",
       "pageIndicator": "第 {currentPage} 页 / 共 {totalPages} 页"
     },
-    
+
     "search": {
       "chevronUp": "收起搜索",
       "chevronDown": "展开搜索",

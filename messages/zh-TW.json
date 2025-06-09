@@ -64,16 +64,25 @@
       }
     },
     "occupation": {
-      "label": "職業類別",
-      "description": "請選擇您的職業類別。",
-      "placeholder": "請選擇",
-      "options": {
-        "delivery": "外送員／快遞員",
-        "labor": "工人／體力勞動者（工廠、建築工地等）",
-        "ride": "網約車司機／代駕",
-        "truck": "貨運／卡車司機"
-      }
-    },
+  "label": "職業類別",
+  "description": "請選擇您的職業類別。",
+  "placeholder": "請選擇",
+  "options": {
+    "delivery": "外送員／快遞員",
+    "labor": "工人／體力勞動者（工廠、建築工地等）",
+    "ride": "網約車司機／代駕",
+    "truck": "貨運／卡車司機",
+    "tech": "互聯網相關從業者",
+    "nonOfficial": "無編制公職人員（如輔警、企事業單位合同工、勞務派遣、私立學校教師）",
+    "official": "有編制公職人員（政府／公務員／事業單位、教師）",
+    "finance": "金融／銀行／法律",
+    "healthcare": "醫藥健康（醫生、護理師、藥師、健康顧問等）",
+    "education": "教育／培訓（如補習班老師，學校教師請填寫公職人員）",
+    "service": "服務業（仲介／銷售／保險／服務員／旅遊業等）",
+    "freelancer": "自由職業（作家、攝影師、設計師）",
+    "unstable": "無法找到長期固定工作"
+  }
+},
     "companyName": {
       "label": "公司名稱",
       "description": "請填寫您所在公司的名稱。",
