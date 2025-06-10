@@ -65,32 +65,6 @@ export default function SubmitPage() {
     mouseTrack: string;
     safetyWord: string;
   };
-  // const [formData, setFormData] = useState({
-  //   province: "",
-  //   city: "",
-  //   district: "",
-  //   companyName: "", // 公司名称
-  //   gender: "", // 性别
-  //   ageRange: "", //年龄范围
-  //   occupation: "", // 职业类别
-  //   companySize: "", // 公司规模
-  //   companyType: "", // 公司性质
-  //   dailyWorkHours: "", // 平均每日工作时长
-  //   weeklyWorkDays: "", // 平均每周工作时长
-  //   overtimePay: "", // 加班报酬
-  //   negativeConsequence: "", // 是否因拒绝加班或质疑工作安排而面临负面后果
-  //   longWorkIssues: [], // 因「长时间工作」出现过哪些问题
-  //   longWorkIssuesOtherText: "",
-  //   violationsObserved: [], // 违法违规现象
-  //   violationsObservedOther: "",
-  //   discriminationReasons: [], // 歧视
-  //   discriminationReasonsOther: "",
-  //   expectedChanges: [], // 哪些改变
-  //   expectedChangesOther: "",
-  //   story: "", // 故事评论
-  //   mouseTrack: "",
-  //   safetyWord: "", //安全词
-  // });
 
   const [formData, setFormData] = useState<FormData>({
     province: "",
@@ -166,14 +140,13 @@ export default function SubmitPage() {
         toast.error(t("error"), { duration: 3000, position: "top-center" });
       }
     } catch (error) {
-      console.error("Error submitting form:", error);
+      // console.error("Error submitting form:", error);
       setSubmitStatus("error");
       toast.error(t("error"), { duration: 3000, position: "top-center" });
     } finally {
       setIsSubmitting(false);
     }
   };
-
 
   type FormChangeEvent =
     | React.ChangeEvent<

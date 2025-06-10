@@ -117,7 +117,7 @@ function getPaginationRange(
   const left = Math.max(2, current - delta);
   const right = Math.min(total - 1, current + delta);
 
-  range.push(1); // always show first
+  range.push(1);
 
   if (left > 2) {
     range.push("...");
@@ -132,7 +132,7 @@ function getPaginationRange(
   }
 
   if (total > 1) {
-    range.push(total); // always show last
+    range.push(total);
   }
 
   return range;
