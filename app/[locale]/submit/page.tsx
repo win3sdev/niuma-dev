@@ -140,7 +140,7 @@ export default function SubmitPage() {
         toast.error(t("error"), { duration: 3000, position: "top-center" });
       }
     } catch (error) {
-      // console.error("Error submitting form:", error);
+      console.error("Error submitting form:", error);
       setSubmitStatus("error");
       toast.error(t("error"), { duration: 3000, position: "top-center" });
     } finally {
