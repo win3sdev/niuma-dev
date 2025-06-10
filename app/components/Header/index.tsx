@@ -134,7 +134,7 @@ export default function Header() {
 
         <div className="flex items-center space-x-2 ">
           <Link
-            href="https://github.com/Li-DAO-Dev/project-restructure"
+            href="https://github.com/Li-DAO-Dev"
             target="_blank"
             rel="noreferrer"
             className="flex w-9 h-9 items-center justify-center rounded-lg transition-all duration-200 hover:bg-neutral-200 dark:hover:bg-neutral-700 hover:scale-105"
