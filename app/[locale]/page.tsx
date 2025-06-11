@@ -2,11 +2,8 @@
 
 import Link from "next/link";
 import {
-  FaUserShield,
   FaClock,
   FaHandsHelping,
-  FaBullseye,
-  FaHeart,
   FaArrowRight,
   FaBuilding,
   FaGavel,
