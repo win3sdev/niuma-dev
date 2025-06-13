@@ -28,12 +28,12 @@ export default async function handler(
 
     // 鼠标轨迹行为检测
     // 鼠标数据 检查是否为空
-    if (!mouseTrack) {
-      return res.status(400).json({
-        success: false,
-        message: "缺少鼠标轨迹数据，可能为机器人提交",
-      });
-    }
+    // if (!mouseTrack) {
+    //   return res.status(400).json({
+    //     success: false,
+    //     message: "缺少鼠标轨迹数据，可能为机器人提交",
+    //   });
+    // }
 
     // 分割轨迹数据
     const events = mouseTrack.split(";");
@@ -43,12 +43,12 @@ export default async function handler(
     const clickEvents = events.filter((e) => e.startsWith("click"));
 
     // 判断逻辑（可根据实际数据调整数值）
-    if (moveEvents.length < 10 || clickEvents.length < 1) {
-      return res.status(400).json({
-        success: false,
-        message: "鼠标行为过少，可能为恶意脚本",
-      });
-    }
+    // if (moveEvents.length < 10 || clickEvents.length < 1) {
+    //   return res.status(400).json({
+    //     success: false,
+    //     message: "鼠标行为过少，可能为恶意脚本",
+    //   });
+    // }
 
     if (!recaptchaToken) {
       return res
@@ -87,17 +87,17 @@ export default async function handler(
     const userAgent = req.headers["user-agent"] || "";
 
     // UA检查
-    const isValidUserAgent =
-      typeof userAgent === "string" &&
-      userAgent.length > 0 &&
-      /(Mozilla|Chrome|Safari|Firefox|Edge|Opera)/i.test(userAgent);
+    // const isValidUserAgent =
+    //   typeof userAgent === "string" &&
+    //   userAgent.length > 0 &&
+    //   /(Mozilla|Chrome|Safari|Firefox|Edge|Opera)/i.test(userAgent);
 
-    if (!isValidUserAgent) {
-      return res.status(400).json({
-        success: false,
-        error: "非法的 User-Agent，禁止提交。",
-      });
-    }
+    // if (!isValidUserAgent) {
+    //   return res.status(400).json({
+    //     success: false,
+    //     error: "非法的 User-Agent，禁止提交。",
+    //   });
+    // }
 
     // 每日提交限制检查
     // 获取当天的 00:00 和 23:59 时间段
