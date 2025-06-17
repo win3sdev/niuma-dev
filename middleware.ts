@@ -14,8 +14,14 @@ export async function middleware(req: NextRequest) {
   try {
     const pathname = req.nextUrl.pathname;
     const nextUrl = req.nextUrl.clone();
-
+    // const url = req.nextUrl
     
+    // if (nextUrl.pathname === `/${nextUrl.locale}/results`) {
+    //   // console.log(nextUrl);
+    //   nextUrl.pathname = `/${nextUrl.locale}/display`;
+    //   return NextResponse.redirect(nextUrl);
+    // }
+
     // 语言区域重定向和处理
     const handleI18n = intlMiddleware(req);
     const hasLocalePrefix = locales.some(
@@ -29,7 +35,6 @@ export async function middleware(req: NextRequest) {
       return NextResponse.redirect(nextUrl);
     }
 
-
     const pageResponse = await optimizePageRuntime(req);
     if (pageResponse) return pageResponse;
 
@@ -41,7 +46,6 @@ export async function middleware(req: NextRequest) {
     console.error("[Middleware] Error occurred:", error);
     return NextResponse.next(); // 保守处理，继续请求链条
   }
-
 }
 
 export const config = {
