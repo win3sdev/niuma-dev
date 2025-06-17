@@ -23,12 +23,10 @@ import {
   Briefcase,
   Layers,
   Users,
-  Info
+  Info,
 } from "lucide-react";
 import axios from "axios";
 import { motion } from "framer-motion";
-
-
 
 const allFields = [
   {
@@ -349,25 +347,36 @@ export default function SurveyTablePage() {
   );
 
   const downloadCSV = () => {
+    // console.log(data.length);
+
+    // CSV表头
     const headers = visibleFields.map(
       (key) => allFields.find((f) => f.key === key)?.label
     );
-    const rows = paginatedData.map((row) =>
+
+    // CSV内容每一行
+    const rows = data.map((row) =>
       visibleFields.map((key) => {
         const val = row[key];
         return Array.isArray(val) ? val.join(" | ") : val || "";
       })
     );
+
     const csvContent = [headers, ...rows]
       .map((r) => r.map((v) => `"${v}"`).join(","))
       .join("\n");
+
     const blob = new Blob([csvContent], { type: "text/csv;charset=utf-8;" });
     const url = URL.createObjectURL(blob);
     const a = document.createElement("a");
+
     a.href = url;
     a.download = "survey_data.csv";
+
     a.click();
+    URL.revokeObjectURL(url);
   };
+
   const [isMobile, setIsMobile] = useState(false);
   useEffect(() => {
     const checkMobile = () => {
@@ -449,7 +458,16 @@ export default function SurveyTablePage() {
                 </div>
 
                 <div className="mt-6 flex justify-end gap-2">
-                  <Button variant="secondary" onClick={downloadCSV}>
+                  <Button
+                    variant="secondary"
+                    onClick={downloadCSV}
+                    className="flex items-center px-4 py-2 rounded-md shadow-md transform transition transform-gpu 
+               hover:bg-gray-100 dark:hover:bg-gray-700 
+               hover:shadow-lg dark:hover:shadow-gray-900 
+               hover:-translate-y-0.5 
+               active:bg-gray-200 dark:active:bg-gray-600 
+               active:shadow-md dark:active:shadow-gray-800"
+                  >
                     <Download className="w-4 h-4 mr-2" />
                     {t("table.settings.download")}
                   </Button>
