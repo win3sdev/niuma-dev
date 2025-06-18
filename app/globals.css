@@ -95,3 +95,19 @@ html {
 .animate-subtle-sway {
   animation: sway 15s infinite ease-in-out; /* 缓慢的上下和轻微旋转 */
 }
+
+
+@keyframes scaleIn {
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.animate-scaleIn {
+  animation: scaleIn 0.4s ease-out forwards;
+}

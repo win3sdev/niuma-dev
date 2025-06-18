@@ -9,8 +9,11 @@ import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import regionData from "@/data/regionData";
+import { useRouter } from "next/navigation";
 
 export default function SubmitPage() {
+  const router = useRouter();
+
   const mouseDataRef = useRef<string[]>([]);
   useEffect(() => {
     let lastTime = 0;
@@ -53,7 +56,7 @@ export default function SubmitPage() {
     weeklyWorkDays: string;
     overtimePay: string;
     negativeConsequence: string;
-    longWorkIssues: string[]; // ✅ 明确 string[]
+    longWorkIssues: string[];
     longWorkIssuesOtherText: string;
     violationsObserved: string[];
     violationsObservedOther: string;
@@ -103,6 +106,7 @@ export default function SubmitPage() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (isSubmitting) return;
     setSubmitStatus("idle");
 
     if (!recaptchaToken) {
@@ -127,7 +131,6 @@ export default function SubmitPage() {
       });
 
       const result = await response.json();
-      // console.log(result);
 
       if (result.success) {
         setSubmitStatus("success");
@@ -135,6 +138,11 @@ export default function SubmitPage() {
 
         setRecaptchaToken(null);
         recaptchaRef.current?.reset();
+
+        setTimeout(() => {
+          router.push("/");
+        }, 1500);
+        
       } else {
         setSubmitStatus("error");
         toast.error(t("error"), { duration: 3000, position: "top-center" });
@@ -180,6 +188,37 @@ export default function SubmitPage() {
       target: { name: "longWorkIssues", value: updatedValues },
     });
   };
+
+  // success
+  const SuccessAnimation = () => (
+    <div className="flex justify-center py-6">
+      <svg
+        className="w-16 h-16 text-green-500 animate-scaleIn"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth={2}
+      >
+        <path d="M20 6L9 17l-5-5" />
+      </svg>
+    </div>
+  );
+
+  // failed
+  const ErrorAnimation = () => (
+    <div className="flex justify-center py-6">
+      <svg
+        className="w-16 h-16 text-red-500 animate-scaleIn"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth={2}
+      >
+        <circle cx="12" cy="12" r="10" />
+        <path d="M15 9l-6 6M9 9l6 6" />
+      </svg>
+    </div>
+  );
 
   return (
     <div className="max-w-[1800px] mx-auto px-4 py-12 space-y-16 text-base text-foreground">
@@ -1165,12 +1204,15 @@ export default function SubmitPage() {
           </div>
 
           {/* 提交状态提示 */}
-          {submitStatus === "success" && (
+          {/* {submitStatus === "success" && (
             <p className="text-green-500 text-center">{t("success")}</p>
           )}
           {submitStatus === "error" && (
             <p className="text-red-500 text-center">{t("error")}</p>
-          )}
+          )} */}
+          {/* 动画提示 */}
+          {submitStatus === "success" && <SuccessAnimation />}
+          {submitStatus === "error" && <ErrorAnimation />}
         </form>
       </div>
     </div>
